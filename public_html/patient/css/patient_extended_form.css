@@ -1,0 +1,201 @@
+/* SeriousMD-inspired structured sections for extended patient profile */
+
+.ppe-sheet {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.ppe-sheet__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.02em;
+}
+
+.ppe-sheet__hint {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+.ppe-section {
+    margin-bottom: 22px;
+}
+
+.ppe-section__head {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 14px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.ppe-field {
+    margin-bottom: 16px;
+}
+
+.ppe-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.ppe-field input[type="text"],
+.ppe-field input[type="tel"],
+.ppe-field input[type="email"],
+.ppe-field select,
+.ppe-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.ppe-field textarea {
+    min-height: 88px;
+    resize: vertical;
+}
+
+.ppe-field input:focus,
+.ppe-field select:focus,
+.ppe-field textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.ppe-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 16px;
+}
+
+@media (max-width: 640px) {
+    .ppe-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ppe-consent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fafbfc;
+    margin-top: 8px;
+}
+
+.ppe-consent__left {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.ppe-consent input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.ppe-consent__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin: 0;
+}
+
+.ppe-consent__link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.ppe-consent__link:hover {
+    text-decoration: underline;
+}
+
+.ppe-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    margin-bottom: 16px;
+}
+
+.ppe-toggle-row label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin: 0;
+}
+
+.ppe-toggle-row input[type="checkbox"] {
+    width: 44px;
+    height: 24px;
+    accent-color: #10b981;
+    cursor: pointer;
+}
+
+.ppe-details {
+    margin-bottom: 18px;
+}
+
+.ppe-details summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2563eb;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ppe-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.ppe-migration-note {
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    color: #92400e;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.ppe-migration-note code {
+    font-size: 12px;
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
