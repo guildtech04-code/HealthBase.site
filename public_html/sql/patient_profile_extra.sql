@@ -1,0 +1,37 @@
+-- Extended patient demographics (emergency contact, physicians, employment, HMO, etc.)
+-- Run once on your MySQL database: mysql ... < sql/patient_profile_extra.sql
+
+CREATE TABLE IF NOT EXISTS `patient_profile_extra` (
+  `patient_id` int(11) NOT NULL,
+  `nickname` varchar(100) DEFAULT NULL,
+  `referring_physician` varchar(255) DEFAULT NULL,
+  `primary_care_physician` varchar(255) DEFAULT NULL,
+  `other_physician_1` varchar(255) DEFAULT NULL,
+  `other_physician_2` varchar(255) DEFAULT NULL,
+  `other_physician_3` varchar(255) DEFAULT NULL,
+  `emergency_contact_name` varchar(255) DEFAULT NULL,
+  `emergency_contact_phone` varchar(80) DEFAULT NULL,
+  `emergency_relationship` varchar(100) DEFAULT NULL,
+  `address_line` text,
+  `other_mobile` varchar(80) DEFAULT NULL,
+  `parent_guardian_1` varchar(255) DEFAULT NULL,
+  `parent_guardian_2` varchar(255) DEFAULT NULL,
+  `show_guardian_names` tinyint(1) NOT NULL DEFAULT 1,
+  `occupation` varchar(255) DEFAULT NULL,
+  `employer_name` varchar(255) DEFAULT NULL,
+  `employer_address` text,
+  `employer_phone` varchar(80) DEFAULT NULL,
+  `hmo_name` varchar(255) DEFAULT NULL,
+  `patient_tags` varchar(255) DEFAULT NULL,
+  `nationality` varchar(120) DEFAULT NULL,
+  `race` varchar(120) DEFAULT NULL,
+  `religion` varchar(120) DEFAULT NULL,
+  `blood_type` varchar(20) DEFAULT NULL,
+  `civil_status` varchar(50) DEFAULT NULL,
+  `philhealth_no` varchar(120) DEFAULT NULL,
+  `invite_patient_app` tinyint(1) NOT NULL DEFAULT 0,
+  `consent_acknowledged` tinyint(1) NOT NULL DEFAULT 0,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`patient_id`),
+  CONSTRAINT `fk_patient_profile_extra_patient` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
