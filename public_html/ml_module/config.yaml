@@ -1,0 +1,32 @@
+# ML Risk Prediction Configuration
+# =================================
+
+# Model configuration
+model_version: 'v0.2.0'
+threshold: 0.59  # Accuracy-optimized threshold from LightGBM
+feature_version: 'v2'
+model_artifacts_dir: './'
+
+# Database configuration
+db:
+  host: '127.0.0.1'
+  user: 'u654420946_GuildTech'
+  password: '@Guild4Tech*'
+  database: 'u654420946_Healthbase'
+
+# Follow-up queue settings
+followup:
+  days_ahead: 10
+  priority_threshold: 0.59
+  pwd_always_priority: true  # PWD patients always get priority
+
+# Alert thresholds
+alerts:
+  high_risk_percentage_threshold: 20  # Alert if >20% of recent visits are high-risk
+  drift_threshold: 0.20  # Alert if feature drift exceeds 20%
+
+# Logging
+logging:
+  level: 'INFO'
+  file: 'ml_scorer.log'
+

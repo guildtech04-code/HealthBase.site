@@ -1,0 +1,22 @@
+# Requirements for ML Module
+# ===========================
+
+# Core dependencies
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# Optional but recommended
+xgboost>=2.0.0
+shap>=0.42.0
+
+# Database connectivity
+PyMySQL>=1.1.0
+
+# Configuration
+PyYAML>=6.0
+
+# Visualization (optional, for notebooks)
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
