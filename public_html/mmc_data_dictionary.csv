@@ -1,0 +1,35 @@
+field,type,description
+clinic_name,str,Facility label (synthetic)
+visit_id,uuid,Unique visit identifier
+patient_id,uuid,Pseudonymous patient identifier
+patient_name,str,Synthetic full name (consistent per patient_id)
+visit_date,date,Date of encounter (holidays removed)
+visit_session,str,AM or PM session based on provider schedule
+visit_time_start,time,Scheduled start time (HH:MM)
+visit_time_end,time,Scheduled end time (HH:MM)
+provider_id,str,Synthetic provider identifier
+provider_name,str,Synthetic provider display name
+provider_specialty,str,Orthopedic Surgery / Dermatology / Gastroenterology
+department,str,Original department label (kept for compatibility)
+service_type,str,"OPD-Consult, OPD-FollowUp, ER-to-OPD, Tele-Consult"
+diagnosis_group,str,Primary diagnosis bucket (not ICD-10)
+age,int,Age in years at visit time
+sex,str,F/M
+pwd_flag,int,1 if PWD; else 0
+insurance_type,str,"PhilHealth, HMO, Self-pay"
+systolic_bp,int,mmHg
+diastolic_bp,int,mmHg
+heart_rate,int,beats per minute
+bmi,float,Body Mass Index
+chronic_flag,str,HTN/DM/ASTHMA/NONE
+prior_visits_90d,int,Count of visits in past 90 days
+risk_score_0_1,float,Synthetic risk for early return/worsening (0–1)
+risk_tier,str,Low/Medium/High based on score
+return_within_14d,int,Observed return within 14 days (label)
+return_within_30d,int,Observed return within 30 days (label)
+followup_recommended,int,1 if auto follow-up recommendation triggered
+next_followup_date,date,Recommended next visit date if any
+priority_level,str,Priority/Standard scheduling
+wait_time_minutes,int,Observed waiting time
+progress_status,str,Improved/Stable/Worsened
+visit_month,str,YYYY-MM monthly bucket (derived)

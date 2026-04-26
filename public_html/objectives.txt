@@ -1,0 +1,12 @@
+To develop a comprehensive patient information and consultation management module that securely organizes patient data, medical histories, and doctor consultation records to enhance clinical decision-making and accuracy.
+
+1.1 Integrate patient registration, health record updates, and consultation documentation into a unified digital workflow.
+
+1.2 Ensure role-based access and data privacy compliance in all patient-related transactions.
+
+To design and implement a SMART scheduling system that automates appointment management using patient priority, doctor availability, and predicted health risk factors.
+
+2.1 Optimize resource allocation through adaptive scheduling algorithms that minimize waiting time and reschedule based on urgency.
+
+2.2 Provide automated reminders and notifications for both patients and staff to enhance coordination and reduce missed appointments.
+

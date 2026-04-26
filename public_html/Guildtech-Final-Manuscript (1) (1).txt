@@ -1,0 +1,4144 @@
+JOSÉ RIZAL UNIVERSITY
+College Division
+
+
+
+HealthBase: Patient Management, Smart Scheduling, and 
+Return Visit Risk Prediction for Dr. Leelin Medical Clinic
+       A Project Study 
+Presented to the Faculty of the
+College of Computer Studies and Engineering
+
+
+
+In Partial Fulfillment of the Requirements
+for the Degree of Bachelor of Science in Information Technology
+
+
+
+by
+
+
+
+Morales, Vince Gabrielle B. 
+Miranda, John Mar J. 
+Ramos, Cheiszer R. 
+Pineda, Shawn Marty R.
+
+
+2nd Semester, SY 2024-2025
+
+
+JOSÉ RIZAL UNIVERSITY
+College Division
+
+APPROVAL SHEET
+
+      The thesis, entitled HealthBase: Patient Management, Smart 
+Scheduling, and Return Visit Risk Prediction for Dr. Leelin Medical Clinic 
+prepared and submitted by VINCE GABRIELLE MORALES, JOHN MAR 
+MIRANDA CHEISZER  RAMOS and SHAWN MARTY PINEDA,  in partial
+fulfillment of the requirements for the degree of Bachelor of Science in 
+Information Technology has been examined and recommended for acceptance 
+and approval for Oral Presentation
+
+
+
+VIRGINA B. LOYOLA, MIT
+Research Adviser
+
+      Approved by the PANEL OF EXAMINERS on Oral Defense on 	 
+with a grade of 	.
+
+
+(name)
+Chair
+
+ 	 
+(name	(name)
+Member	Member
+
+
+SHARMAINE JUSTYNE R. MAGLAPUZ, DIT
+Department Chair, Information Technology
+
+      Accepted and approved in partial fulfillment of the requirements for the 
+degree of Bachelor of Science in Information Technology.
+
+
+
+LIZA R. REYES, MENGG-CPE
+Dean, Computer Studies and Engineering
+
+
+JOSÉ RIZAL UNIVERSITY
+College Division
+
+
+CERTIFICATE OF ORIGINALITY
+
+
+
+      We hereby declare that the thesis entitled, HealthBase: Patient 
+Management, Smart Scheduling, and Return Visit Risk Prediction for 
+Dr. Leelin Medical Clinic is our own original work carried out as Bachelor's 
+student at José Rizal University except to the extent that assistance from others in 
+the thesis' design and conception or in style, presentation and linguistic expression 
+are duly acknowledged.
+
+      All sources used for the thesis have been fully and properly cited. It contains 
+no material which to a substantial extent has been accepted for the award of any 
+other degree at JRU or any other educational institution, except where due 
+acknowledgement is made in the thesis.
+
+
+
+
+Signature	Signature
+VINCE GABRIELLE MORALES B,	JOHN MAR MIRANDA J.
+
+
+
+
+Signature	Signature
+CHEISZER RAMOS R.	SHAWN MARTY PINEDA R.
+
+
+
+
+ABSTRACT
+
+
+Title		:	HEALTHBASE: PATIENT MANAGEMENT, 
+SMART SCHEDULING AND RETURN VISIT RISK PREDICTION FOR
+      Dr. Leelin Medical Clinic 
+No. of Pages	:
+Researchers	:	VINCE GABRIELLE MORALES 
+JOHN MAR MIRANDA 
+CHEISZER RAMOS
+SHAWN MARTY PINEDA
+
+Adviser	:	VIRGINIA B. LOYLA, MIT
+
+School	:	José Rizal University
+School Year	:	2024-2025
+Degree	:	Bachelor of Science in Information Technology
+
+
+    This study presents the development of HealthBase, a web-based clinical 
+information system created for Dr. Leelin Medical Clinic, a private outpatient 
+facility. HealthBase is designed to support outpatient healthcare providers in 
+delivering faster, safer, and more coordinated care. By addressing key 
+inefficiencies in patient flow and information handling, it empowers clinics to 
+transition from manual processes to intelligent, data-driven operations. The system 
+aims to improve clinical operations by automating patient management, enhancing 
+health data handling, and streamlining administrative tasks. Built on user-centered 
+design, HealthBase enables secure access to patient records, real-time health 
+monitoring, and analytics-driven decision support. A core feature is its predictive 
+module, which applies machine learning to identify patients at risk of return visits 
+due to recurring conditions, allowing for proactive follow-ups. Hosted on both cloud 
+and local servers, it ensures data security, redundancy, and role-based access. 
+Grounded in Health Information Systems and Sociotechnical Systems theories, 
+HealthBase illustrates how thoughtful integration of technology with clinical 
+workflows can improve efficiency, continuity of care, and decision-making in a 
+modern outpatient setting.
+Keywords:
+
+Health information system, patient management, clinic operations, return visit risk 
+prediction, predictive analytics, machine learning, system integration, data 
+security, role-based access, outpatient care technology, Leelin Medical Clinic, ISO 
+25010 Standards
+
+
+
+TABLE OF CONTENTS
+
+
+Title Page
+.................................
+i
+Approval Sheet
+.................................
+ii
+Certificate of Originality
+.................................
+iii
+Abstract
+.................................
+iv
+Table of Contents
+.................................
+vi
+List of Figures
+
+
+Figure 1.1. Conceptual Framework of
+
+
+the Proposed Study
+.................................
+14
+Figure 3.1. Scrum Methodology Life
+
+
+Cycle
+.................................
+54
+Figure 3.2. Data Analysis Process
+.................................
+58
+Figure 3.3. Context-Level Diagram of
+
+
+the Proposed System
+.................................
+60
+Figure 3.4. Top-Level Diagram of the
+
+
+Proposed System
+.................................
+62
+Figure 3.5. Child Diagram of Add and
+
+
+Manage Patient Records of the
+
+
+Proposed System
+.................................
+64
+Figure 3.6. Child Diagram of Manage
+
+
+Clinic Metrics of the Proposed System
+.................................
+65
+Figure 3.7. Child Diagram of
+
+
+Generate Reports and Dashboards of
+
+
+the Proposed System
+.................................
+66
+Figure 3.8. Child Diagram of Update
+
+
+Medical History of the Proposed
+.................................
+67
+System
+
+
+Figure 3.9. Child Diagram of Update
+
+
+Health Data of the Proposed System
+.................................
+68
+Figure 3.10. Child Diagram of Update
+
+
+Patient Records of the Proposed
+
+
+System
+.................................
+69
+Figure 3.11. Child Diagram of Patient
+
+
+Data Requests of the Proposed
+.................................
+70
+System
+
+
+Figure 3.12. Entity Relationship
+
+
+Diagram of the Proposed System
+.................................
+71
+Figure 3.13. System Architecture of
+
+
+the Proposed System
+.................................
+73
+Figure 3.14. Use-Case Diagram of
+
+
+the Proposed System
+.................................
+75
+
+
+
+
+Chapter 1 INTRODUCTION
+.................................
+8
+Background of the Study
+.................................
+8
+Statement of the Objectives
+.................................
+12
+General Objectives
+.................................
+12
+Specific Objectives
+.................................
+13
+Conceptual Framework
+.................................
+14
+Significance of the Study
+.................................
+15
+Scope and Limitations
+.................................
+17
+Definition of Terms
+.................................
+19
+Chapter 2 REVIEW OF RELATED 
+LITERATURE AND STUDIES
+
+.................................
+
+21
+Related Literature and Studies
+.................................
+21
+Relevance of Related Literature and 
+Studies to the Current Study
+.................................
+34
+Chapter 3 METHODOLOGY
+.................................
+51
+Research Design
+.................................
+51
+Software Development Methodology
+.................................
+52
+Data-Flow Diagram
+.................................
+60
+Entity Relationship Diagram
+.................................
+71
+System Architecture
+.................................
+73
+Use-Case Diagram
+.................................
+75
+Research Locale
+.................................
+76
+Sources of Data
+.................................
+77
+Data Collection
+.................................
+78
+Instruments
+.................................
+79
+References
+.................................
+81
+
+
+
+Chapter 1 
+INTRODUCTION
+
+Background of the Study
+
+    Healthcare information systems have evolved dramatically over the past few 
+decades, shifting from paper-based records to integrated digital platforms that 
+support various aspects of patient care [1]. In response to these advancements, 
+HealthBase was developed for Dr. Leelin Medical Clinic, a modern private 
+outpatient facility, to improve the efficiency and accuracy of patient management, 
+appointment handling, and clinical decision-making. By moving away from manual 
+paperwork, the clinic can digitally register patients, access medical histories, and 
+manage consultations more effectively. HealthBase's smart scheduling 
+functionality helps minimize patient wait times and allows staff to efficiently 
+manage their daily workload. It also uses machine learning to assess patients who 
+may be at risk of returning due to ongoing or unresolved health conditions. This 
+allows clinicians to deliver proactive care that improves patient outcomes and 
+reduces workflow disruptions. With visual dashboards and simplified reports, clinic 
+administrators gain better oversight of operational performance, resource 
+allocation, and care quality. This transition from manual to intelligent, data-driven 
+tools represents a key shift in outpatient healthcare. For clinics like Dr. Leelin 
+Medical Clinic, where streamlined service and personalized care are essential, a 
+secure and scalable information system like HealthBase can enhance safety, 
+improve coordination, and simplify internal processes while protecting sensitive 
+data [2]. The system transforms data management from basic recordkeeping into
+
+
+a tool that enhances clinical accuracy, operational performance, and informed care 
+planning, supported by visual summaries and performance tracking. Like many 
+clinics, Dr. Leelin Medical Clinic faces limitations such as scattered patient records, 
+manual health calculations, and time-consuming documentation. These outdated 
+processes can lead to human error and inefficiencies in care workflows. By 
+introducing an automated system, HealthBase directly addresses these pain 
+points and reduces the risks associated with manual data handling [3]. Recent 
+studies confirm that healthcare information systems have significantly advanced 
+since the COVID-19 pandemic, leading to faster digital adoption across both 
+hospital and outpatient settings [4]. HealthBase reflects this progress by 
+incorporating modern database architecture that supports clinic needs. Electronic 
+Health Records (EHRs) are now central to patient care, enabling structured data 
+entry and better care coordination [5]. This level of digital centralization is critical 
+for generating useful reports and supporting timely decision-making. HealthBase 
+leverages current database technologies that balance security and accessibility for 
+clinical users. Its modular design allows clinics to scale system features based on 
+their resources, while custom algorithms enhance the accuracy of medical 
+calculations [6]. Despite these advantages, smaller healthcare facilities often face 
+challenges with limited IT staffing and technical capacity. Implementing 
+HealthBase in such contexts can provide a much-needed solution to these 
+constraints [4]. As healthcare systems become increasingly data-driven, the ability 
+to turn patient data into actionable insights through analytics and visualization tools 
+becomes highly valuable [7]. Evidence shows that clinical decision support
+
+
+systems, when paired with well-designed alert features, can significantly reduce 
+medication errors and improve care outcomes [8]. A well-structured Database 
+Management System (DBMS) includes vital components such as secure data 
+storage, query handling, and standardized data entry interfaces [9]. These systems 
+form the backbone of medical data operations and support compliance with 
+regulatory requirements [10]. The evolution of DBMS in healthcare has shifted from 
+simple file-based models to relational and even NoSQL structures, which can 
+manage large volumes and varied formats of medical information [1]. Modern 
+systems often integrate cloud computing and distributed architecture to boost 
+scalability and performance. Improvements in data analytics have also 
+strengthened big data management in clinical environments [11]. Standards like 
+HL7 and FHIR now guide healthcare system interoperability, allowing HealthBase 
+to exchange data efficiently with external systems [12], [13]. Implementing 
+HealthBase at Dr. Leelin Medical Clinic offers transformative potential to enhance 
+care quality, accuracy, and efficiency. By supporting tailored calculations and 
+structured analytics, the system fills key gaps in outpatient clinical operations. 
+Through data visualization and predictive tools, HealthBase helps identify patients 
+likely to return for follow-up, enabling staff to take early action and improve 
+continuity of care [14]. Machine learning models that evaluate demographics, 
+vitals, and prior visits are shown to be effective in this type of risk prediction [15]. 
+By integrating these features into the system interface, HealthBase gives clinicians 
+meaningful and timely insights to guide care delivery. Predictive scoring has 
+become a valuable asset in many clinical systems, supporting early detection and
+
+
+case prioritization [16]. By turning raw data into clear clinical intelligence, 
+HealthBase empowers staff to act faster and more confidently. It also generates 
+reports that support long-term quality improvement and reduce the burden of 
+manual computation in day-to-day operations [4]. This approach is especially 
+helpful in clinics managing increasing patient loads and limited staff, allowing them 
+to maintain performance without sacrificing care quality. The system's interface is 
+built around user-centered design principles, which is a known factor in ensuring 
+successful adoption of digital healthcare tools [16]. A strong user experience 
+increases staff engagement and ensures the system is used consistently and 
+effectively in real practice. By aligning interface design with clinical workflows and 
+user habits, HealthBase offers a smooth and effective solution to modern 
+outpatient data challenges. For Dr. Leelin Medical Clinic, it provides a reliable, 
+intuitive platform that supports day-to-day operations, proactive care delivery, and 
+long-term strategic growth..
+
+
+Statement of the Objectives 
+General Objective
+    To develop a clinical information system called HealthBase for Dr. Leelin 
+Medical Clinic that enhances patient management, improves appointment 
+scheduling, and predicts return visit risks by organizing patient records, tracking 
+essential health data, streamlining follow-up care, and generating summarized 
+reports to support clinical decision-making.
+
+
+Specific Objectives
+
+1.	To develop a patient management system that helps doctors make better 
+decisions by organizing important health details, analyzing patient 
+characteristics, and managing data efficiently.
+1.1	Patient registration module with integrated patient profile data collection.
+
+1.1.1	Basic Information
+
+1.1.2	Health Concerns
+
+1.1.3	Medical History
+
+2.	To develop a Smart scheduling system that optimizes resource utilization while 
+enhancing the patient experience through smart allocation algorithms.
+2.1	Provider Availability System shows available doctors or
+
+specialists and matches them with patients based on schedule and 
+expertise.
+2.2	Adaptive Patient Scheduling adjusts based on patient preferences, travel 
+time, and urgency to ensure efficient and convenient appointments.
+
+
+3.	To develop data visualization reports for predictive Return Visit risk.
+
+3.1	Clinical Dashboards
+
+3.2	Exportable reports in multiple formats
+
+3.3	Integrate patient risk prediction models to identify individuals likely to 
+require early return visits based on their clinical history and health data.
+3.4	Display visual indicators for patients flagged as high-risk for return visits to 
+support early intervention and follow-up planning.
+4.	To evaluate the proposed system using the ISO standards ISO 25010- 
+2011/2023 in terms of:
+4.1.	Security
+
+4.2.	Reliability
+
+4.3.	Usability
+
+4.4.	Performance
+
+4.5.	Maintainability
+
+
+Conceptual Framework
+
+Figure 1.1 Conceptual Framework of the Proposed Study
+
+      This conceptual framework illustrates the structure and workflow of the 
+HealthBase: Patient Management, Smart Scheduling, and Return Visit Risk 
+Prediction system developed for Dr. Leelin Medical Clinic. It represents how patient 
+care and clinic operations are enhanced through digital technology and predictive 
+analytics. The framework begins by collecting patient details, doctor availability, 
+scheduling preferences, and relevant clinical data. These inputs flow directly into 
+integrated modules that securely manage patient information, intelligently 
+schedule appointments, and proactively identify patients at risk of return visits. 
+Additionally, HealthBase provides clear, visual reports and dashboards to support 
+informed clinical and administrative decisions. Comprehensive security measures 
+such as authentication, role-based access, encryption, and regular backups 
+ensure data confidentiality and system reliability.
+
+
+      By integrating predictive analytics, HealthBase can anticipate potential 
+patient health risks, enabling healthcare providers to take proactive steps in 
+delivering patient care. This helps reduce unnecessary return visits, optimizes 
+clinic resources, and enhances overall patient satisfaction. Moreover, the flexible 
+hybrid architecture combining local and cloud-based systems ensures seamless 
+scalability and reliable accessibility. It accommodates various user roles, allowing 
+doctors and staff to manage patient care efficiently and enabling patients to 
+actively participate in their own healthcare journey. Overall, the framework 
+highlights HealthBase as a comprehensive, user-friendly solution that supports 
+proactive decision-making, improved patient outcomes, and streamlined clinic 
+operations for Dr. Leelin Medical Clinic.
+
+
+Significance of the Study
+
+      The development of HealthBase: Patient Management, Smart Scheduling, 
+and Return Visit Risk Prediction for Dr. Leelin Medical Clinic directly addresses the 
+critical operational and clinical challenges encountered within outpatient 
+healthcare settings. By integrating digital health technologies, Smart scheduling 
+algorithms, and predictive analytics, this system enhances the efficiency of clinical 
+workflows, improves the quality of patient care, and supports evidence-based 
+clinical decision-making.
+      To the Patients. HealthBase will significantly enhance their healthcare 
+experience by providing timely, coordinated, and personalized medical attention. 
+Patients will benefit from shorter waiting periods, streamlined appointment
+
+
+scheduling, and proactive care, especially for those identified as having a higher 
+risk of return visits. This predictive feature ensures patients receive early 
+interventions, contributing to improved health outcomes and greater satisfaction.
+      To Healthcare Professionals. Healthcare professionals at Dr. Leelin 
+Medical Clinic will greatly benefit from HealthBase by having centralized and 
+automated management of patient information. The system significantly reduces 
+the time and effort required for manual documentation, enabling medical staff to 
+focus more on patient interaction and quality care delivery. Additionally, integrated 
+predictive analytics will help clinicians easily identify patients who may require 
+extra attention, allowing for timely and precise clinical interventions to enhance 
+patient safety and outcomes.
+      To Clinic Administration. Clinic administrators will find HealthBase's 
+structured visualization tools and comprehensive dashboards highly beneficial. 
+These features provide timely and clear insights into patient trends, resource 
+utilization, and overall clinic performance. The availability of easily interpretable 
+reports supports informed decision-making, efficient resource management, and 
+strategic operational planning, all while ensuring adherence to healthcare 
+standards, including patient data privacy and security.
+      To Researchers. This study presents a valuable opportunity to explore the 
+application of machine learning, data visualization, and patient-centered health 
+system design in a real outpatient clinical environment. Through HealthBase at Dr. 
+Leelin Medical Clinic, researchers can examine firsthand how predictive analytics
+
+
+and user-focused interfaces contribute to improving clinical workflows, patient 
+outcomes, and continuity of care.
+      To Future Researchers. This research project provides foundational 
+knowledge and serves as a reference for future studies in healthcare informatics, 
+particularly within private outpatient settings. Future research may build upon this 
+work by extending predictive capabilities, exploring mobile or telehealth 
+integrations, or adapting HealthBase to accommodate larger practices or multi- 
+branch clinical networks.
+
+
+
+
+
+
+
+
+
+
+
+
+Scope and Limitations
+
+      This study focuses on the design and implementation of HealthBase, a 
+cloud-based clinical information system specifically developed for Dr. Leelin 
+Medical Clinic, a private outpatient facility. HealthBase aims to digitize core clinical 
+operations, including patient registration, health record management, smart 
+scheduling, and return-visit risk prediction. The system ensures accurate, 
+consistent, and easily accessible patient information, streamlining daily workflows 
+for healthcare professionals and supporting clinical decision-making through
+
+
+organized patient data and predictive analytics. Additionally, HealthBase 
+incorporates automated medical calculation features to reduce manual 
+documentation tasks and improve the accuracy of patient treatment planning. 
+User-friendly visualization tools are integrated to simplify the interpretation of 
+clinical data. To uphold patient confidentiality and comply with privacy standards, 
+the system employs appropriate access control and secure data handling 
+protocols.
+      However, the implementation scope of HealthBase is exclusively within Dr. 
+Leelin Medical Clinic and does not extend to other healthcare providers or external 
+healthcare networks. The system explicitly excludes financial management, billing 
+transactions, and inventory management functionalities. While designed for cloud- 
+based operations with potential future compatibility for data exchange, initial 
+deployment will not include integration with external or third-party healthcare 
+systems. The security measures incorporated in this study reflect standard privacy 
+protection practices, and advanced cybersecurity features are not addressed 
+within this research. Additionally, aspects such as comprehensive user training, 
+onboarding processes, and long-term maintenance strategies fall outside the 
+scope of this initial implementation.
+
+
+Definition of Terms
+
+HealthBase - A digital clinical system designed specifically for Dr. Leelin Medical 
+Clinic to manage patient information, appointments, and health data efficiently..
+Patient Management - The organized way of collecting, updating, and keeping 
+track of patient information, making sure it's accurate and easy to access by clinic 
+staff.
+Smart Scheduling - A feature in HealthBase that automatically schedules patient 
+appointments based on their specific needs and the availability of clinic doctors.
+Return Visit Risk Prediction - A tool within HealthBase that predicts which 
+patients might need to come back for additional care, helping doctors provide 
+timely follow-ups.
+Automated Medical Calculations - Built-in features of HealthBase that 
+automatically calculate important medical data, reducing mistakes from manual 
+computations and saving staff time.
+Predictive Analytics - Using past patient information to predict possible future 
+health needs or issues, helping clinic staff to proactively care for their patients.
+Data Visualization Tools - Visual charts and reports within HealthBase that 
+clearly display patient data and clinic performance, making it easier for staff to 
+understand and use the information.
+
+
+Access Control - Security features in HealthBase ensuring that only authorized 
+people can view and manage patient information.
+Data Privacy Compliance - Following established rules and standards to ensure 
+patient information stays safe, secure, and confidential within the HealthBase 
+system.
+User-Centered Design - Designing HealthBase specifically around the needs 
+and workflows of the clinic's staff and doctors, ensuring the system is easy and 
+comfortable to use.
+Cloud-Based System - A type of technology setup where HealthBase stores and 
+manages data online, allowing secure access from anywhere via the internet.
+Outpatient Care - Healthcare provided to patients who visit the clinic for 
+consultations or treatments without staying overnight or being admitted to a 
+hospital
+.
+
+
+Chapter 2
+
+REVIEW OF RELATED LITERATURE
+
+      This chapter presents the relevant literature and studies that the researcher 
+considered to strengthen the importance of the present study. It also presents the 
+synthesis of the art to understand the research for a better comprehension of the 
+study.
+Patient Information Management Systems and EHR Evolution
+
+      The progressive evolution of Electronic Health Records (EHR) and Health 
+Information Systems (HIS) has fundamentally transformed how healthcare 
+facilities collect, organize, and utilize patient data. These systems have 
+transitioned from simple repositories of patient demographics to comprehensive 
+platforms that integrate medical histories, treatment plans, and clinical decisions 
+across multidisciplinary teams. This shift reflects the global momentum toward 
+digitizing health infrastructure to enhance patient safety, continuity of care, and 
+operational efficiency. According to [53], a 25-year review of EHR systems 
+illustrates how implementation has matured from basic digital archives to robust, 
+interoperable systems capable of supporting population health analytics. The 
+study emphasizes that successful EHR deployment is not merely a technical 
+endeavor but one that relies on process alignment, leadership engagement, and 
+adaptive implementation strategies. Similarly, [24] demonstrated that in Malaysian 
+healthcare settings, the adoption of EHRs led to measurable improvements in 
+clinical workflow, accuracy in documentation, and provider performance. These 
+findings resonate with the needs of facilities like Dr. Leelin Medical Clinic, where
+
+
+streamlined data access and care coordination are vital in an outpatient context. 
+However, several studies highlight persistent challenges that undermine the full 
+potential of EHRs. [26] and [30] note that although open-source EHRs offer cost- 
+effective and customizable solutions, they frequently lack compliance with 
+healthcare interoperability standards such as HL7 and FHIR. Additionally, these 
+systems often underperform in environments with limited IT capacity, where 
+training and support infrastructures are weak or inconsistent. [28] revealed that in 
+the Philippine context, the user experience with EHR systems varies greatly 
+depending on the availability of staff support, intuitive system design, and long- 
+term usability planning. These challenges are compounded in resource-limited 
+settings, where digital literacy remains low, and institutional resistance to 
+technological change is prevalent. In addition to technical limitations, 
+organizational and human factors play a decisive role. Studies like [41] emphasize 
+that user satisfaction is closely tied to EHR usability, workflow alignment, and 
+interface responsiveness. Without consistent training and involvement in system 
+development, even the most advanced EHR systems risk underutilization or 
+rejection. Meanwhile, [31] and [32] show that during health emergencies such as 
+the COVID-19 pandemic, digital adoption surged but often declined post-crisis due 
+to poor integration into routine operations and lack of sustainability measures. This 
+suggests that successful long-term EHR deployment requires systems to be 
+context-sensitive, modular, and supported by institutional change management 
+strategies.
+
+
+HealthBase builds on these insights by offering a localized, outpatient-focused 
+solution designed for sustainable adoption in a private clinic setting. It integrates 
+core EHR functionalities-such as structured patient data entry, secure health 
+information access, and role-based permissions-within a flexible architecture that 
+can be hosted on both cloud and local servers. In contrast to earlier systems 
+criticized for lacking usability and integration ([26], [41]), HealthBase is developed 
+using user-centered design principles to improve healthcare worker engagement 
+and minimize resistance. Moreover, it anticipates future needs by embedding 
+support for interoperability and advanced analytics, including return visit risk 
+prediction.
+      In conclusion, the literature demonstrates that the evolution of EHRs and 
+patient information systems is marked by significant gains in care delivery but 
+tempered by usability, technical, and organizational barriers. The HealthBase 
+project responds directly to these challenges, offering a scalable and intuitive 
+system aligned with the unique operational realities of Dr. Leelin Medical Clinic. It 
+reflects best practices from global research while addressing specific local needs, 
+contributing to a more sustainable and effective approach to digital health 
+transformation in outpatient care.
+
+
+
+Smart Scheduling and Appointment Optimization
+
+      In recent years, healthcare institutions have increasingly turned to digital 
+scheduling solutions to mitigate inefficiencies related to long wait times, uneven
+
+
+appointment distribution, and suboptimal provider-patient alignment. Studies 
+across outpatient settings highlight the transformative role of intelligent scheduling 
+systems in improving resource utilization, reducing patient no-shows, and 
+enhancing care continuity. These systems leverage real-time availability, 
+predictive algorithms, and patient-preference data to dynamically assign 
+appointments, thus aligning clinical demand with service capacity. [26] reviewed 
+the most recent advances in open-source EHR platforms, many of which integrate 
+patient scheduling modules designed to optimize appointment timing, minimize 
+overlaps, and accommodate physician availability. While the systems show 
+promise, they frequently lack adaptive capabilities that factor in urgency, historical 
+attendance, and patient condition severity. [33] emphasized that successful digital 
+scheduling hinges on interoperability, user engagement, and system 
+responsiveness to changes in care demand. These findings align with [45], who 
+identified scheduling friction as a major contributor to provider burnout, particularly 
+in resource-limited and high-patient-load clinics. Further, [28] explored EMR 
+adoption during the COVID-19 pandemic, noting that digital scheduling saw a spike 
+in use but often failed to scale sustainably post-crisis due to lack of staff training 
+and poor system usability. Studies like [41] and [39] found that while clinicians 
+appreciated digital tools for managing appointments, many platforms lacked 
+integration with clinical decision-making systems, resulting in redundant steps and 
+workflow misalignment. In high-volume outpatient environments, [36] noted that 
+smart scheduling systems with built-in triage, alerts, and visit prioritization 
+significantly improve throughput and patient satisfaction.
+
+
+Despite these gains, limitations persist. Many platforms do not personalize 
+scheduling based on contextual data such as patient demographics, travel time, or 
+likelihood of reappointment. Additionally, there remains a lack of integration 
+between scheduling tools and patient risk data, which could otherwise enable 
+preemptive booking for at-risk individuals. These gaps hinder the ability to provide 
+targeted and proactive care, especially in settings with constrained manpower or 
+fluctuating demand. HealthBase addresses these shortcomings by embedding an 
+intelligent, patient-centered scheduling subsystem tailored for Dr. Leelin Medical 
+Clinic. It includes adaptive patient matching based on urgency, patient preference, 
+doctor availability, and travel considerations. Beyond routine appointments, it 
+integrates with a return visit risk prediction module that flags high-risk patients for 
+follow-up prioritization. This ensures that vulnerable individuals are scheduled 
+earlier, enabling proactive interventions. HealthBase also simplifies workflows 
+through an intuitive dashboard that visualizes booking metrics and workload 
+distribution, aiding both clinical and administrative decision-making. Unlike 
+traditional schedulers, it aligns clinical urgency with system recommendations, 
+ensuring that smart scheduling is not just operational but also clinically meaningful.
+
+
+
+Return Visit Risk Prediction and Clinical Decision Support
+
+      Return visits in outpatient settings are often linked to incomplete treatment, 
+unresolved symptoms, or undetected comorbidities. Predictive analytics has 
+become a crucial tool in identifying patients who may be at risk for unplanned return 
+visits. A growing number of studies have explored how machine learning (ML)
+
+
+models, when trained on structured EHR data, can generate risk scores that assist 
+clinicians in prioritizing follow-up care. For example, [13] conducted a systematic 
+review that emphasized the utility of EHR-based risk prediction models in 
+accurately flagging patients with high readmission probability, showing that 
+demographic variables, comorbidities, and prior visit patterns were strong 
+predictors of return. Complementing this, [11] introduced a multi-output Gaussian 
+process RNN capable of real-time validation for early sepsis detection, illustrating 
+how temporal modeling can significantly enhance clinical decision-making. 
+Although focused on inpatient contexts, the same principles apply to outpatient 
+settings, especially where follow-up care is essential. Likewise, [15] highlighted the 
+importance of leveraging unstructured EHR data for richer analysis, addressing 
+gaps in current models that rely primarily on coded values. Their study found that 
+inclusion of physician notes and patient narratives can boost predictive accuracy 
+when integrated through natural language processing.
+      However, the deployment of such predictive tools in smaller or private 
+outpatient clinics remains limited due to infrastructure constraints, data quality 
+concerns, and lack of trained personnel. [18] emphasized that data quality 
+assessments are rarely automated, making it difficult to sustain reliable ML-driven 
+insights over time. In the Philippine context, [20] revealed that while clinicians are 
+open to predictive technology, interoperability and integration with current health 
+systems remain persistent challenges. The review concluded that predictive tools 
+often lack localized data sets and clinical pathways, making it harder for healthcare 
+staff to trust or act on generated risk scores. Addressing these challenges, the
+
+
+HealthBase system integrates a dedicated return visit risk prediction module 
+designed for outpatient environments like Dr. Leelin Medical Clinic. The system 
+applies machine learning models to structured health data such as visit frequency, 
+vitals, and diagnosis history to generate personalized return risk scores. By 
+highlighting high-risk patients directly within the smart scheduling interface, 
+HealthBase empowers healthcare providers to proactively intervene and prioritize 
+follow-up visits. Furthermore, HealthBase features customizable clinical 
+dashboards that visualize predicted risks in real time and facilitate data-driven 
+planning. These innovations not only reduce the burden of manual flagging but 
+also align with the broader goal of predictive, preventive, and personalized 
+medicine. Through a practical and scalable implementation of clinical decision 
+support, HealthBase enhances continuity of care and supports better patient 
+outcomes in resource-constrained outpatient settings.
+
+
+
+
+
+
+
+
+Smart Scheduling and Patient Flow Optimization in Outpatient Settings
+
+      Efficient scheduling systems are central to outpatient service delivery, 
+influencing both clinical efficiency and patient satisfaction. Traditional appointment 
+systems often fail to consider variables such as urgency, provider availability, 
+patient preferences, and expected consultation durations-leading to bottlenecks, 
+extended waiting times, and resource underutilization. Literature over the past
+
+
+decade has increasingly highlighted the potential of intelligent scheduling tools to 
+transform outpatient operations. For instance, [2] emphasized that big data 
+techniques can be used to dynamically adjust appointment systems in real-time, 
+optimizing patient flow and reducing idle time for providers. These technologies 
+enable adaptive scheduling based on patient histories, risk categories, and 
+predictive metrics. Furthermore, [17] identified implementation considerations for 
+deploying digital health tools in large systems, stressing that smart scheduling 
+features require integration with EHRs, staff workflows, and patient communication 
+channels to be effective. [8] also demonstrated the potential of analytics to 
+anticipate patient demand patterns, especially when paired with historical 
+appointment data, enabling proactive resource planning. Despite these benefits, 
+several challenges persist. [38] found that organizational readiness, user 
+resistance, and lack of training often delay the adoption of smart scheduling 
+systems in developing countries. In many cases, existing hospital scheduling 
+systems are static and lack decision-support mechanisms. [33] reported that users 
+frequently experience frustration due to rigid appointment structures, especially 
+when patient needs vary widely. The study pointed to poor interface design and 
+lack of real-time flexibility as common limitations.
+      The Philippine context, as discussed in [22] and [35], illustrates that even 
+during the COVID-19 pandemic, many outpatient clinics continued to rely on 
+manual or semi-digital scheduling methods, leading to missed appointments and 
+underutilized time slots. These gaps demonstrate the need for patient-centered, 
+adaptive scheduling approaches that are aligned with actual clinical workflows. In
+
+
+response, the HealthBase system integrates a Smart Scheduling Module designed 
+to optimize outpatient care delivery for Dr. Leelin Medical Clinic. This module 
+incorporates adaptive appointment allocation, which considers patient urgency, 
+doctor availability, clinic capacity, and predicted return risks. The system allows 
+patients to be automatically matched with the appropriate provider based on health 
+concern categories and time sensitivity. Additionally, HealthBase accommodates 
+dynamic adjustments, such as rescheduling based on real-time provider 
+availability or patient cancellations, enhancing scheduling flexibility and reducing 
+no-show rates. The integration of patient flow analytics also enables clinic 
+administrators to monitor peak hours, allocate resources effectively, and improve 
+the overall continuity of care. Through intelligent scheduling, HealthBase not only 
+reduces wait times and overcrowding but also improves clinical efficiency and 
+patient experience in a busy outpatient environment.
+
+
+
+Health Data Visualization and Decision Support Systems
+
+      In modern outpatient healthcare environments, the ability to transform raw 
+data into actionable insights is essential for enhancing clinical decision-making, 
+resource planning, and operational oversight. Decision Support Systems (DSS), 
+especially those integrated with Electronic Health Records (EHRs), play a critical 
+role in identifying patient risks, improving diagnostic accuracy, and ensuring timely 
+interventions. Visualization tools-such as clinical dashboards and exportable 
+summary reports-are now considered indispensable features of advanced Health 
+Information Systems (HIS). [5] conducted a systematic review and confirmed that
+
+
+Clinical Decision Support Systems (CDSS) can significantly improve medication 
+safety, reduce adverse events, and enhance diagnostic precision when properly 
+integrated with existing workflows. These systems are most effective when paired 
+with clear visual indicators and alerts, which simplify data interpretation for 
+clinicians. Similarly, [7] emphasized that a strong Database Management System 
+(DBMS) backbone is necessary for real-time data handling and visualization, 
+allowing users to view trends and metrics with minimal latency. Yet, studies such 
+as [47] and [18] noted that data quality and completeness remain persistent issues. 
+Poorly structured inputs, fragmented information sources, and inconsistent data 
+entry protocols hinder the effectiveness of DSS and visual analytics. [54] 
+underscored that even in systems with advanced alerts and dashboards, if the 
+underlying data is inaccurate or delayed, decision-making can be compromised. 
+Another key barrier to effective data visualization tools is the lack of training or 
+standardized usage among healthcare personnel, as highlighted in [36]. Moreover, 
+in resource-limited settings like many private clinics in the Philippines, 
+implementation of real-time decision support is often constrained by hardware 
+limitations, internet reliability, and the absence of localized predictive models. [42] 
+found that healthcare workers often rely on basic reporting tools rather than 
+advanced analytics, limiting the value of collected data. [51] also emphasized the 
+need for dashboard customization and user-focused design in ensuring adoption 
+and utility in clinical environments.
+      To address these gaps, the HealthBase system developed for Dr. Leelin 
+Medical Clinic integrates a robust data visualization module designed to support
+
+
+predictive analytics and facilitate rapid clinical insight. The system features 
+interactive dashboards that track patient demographics, visit frequencies, risk 
+scores, and provider workloads. Exportable reports in various formats support both 
+day-to-day management and periodic performance reviews. A key innovation is 
+the predictive decision support tool embedded within the interface, which utilizes 
+patient histories, vital signs, and risk factors to flag individuals at risk for early return 
+visits. This feature empowers providers to plan proactive care and follow-up 
+strategies. Furthermore, the system's visual indicators-such as color-coded 
+alerts and severity labels-enhance usability and reduce cognitive load, making it 
+easier for clinicians to prioritize patient needs. Through these tools, HealthBase 
+enhances the clinic's capacity for informed, data-driven, and timely decision- 
+making, while ensuring that critical information is presented in a manner that 
+supports clinical efficiency and continuity of care.
+Synthesis
+
+      The collective body of related literature highlights that successful 
+implementation of Electronic Health Records (EHRs) and Health Information 
+Systems (HIS) requires more than just advanced technology-it demands a 
+holistic strategy that integrates user-centered design, institutional readiness, 
+continuous user training, and strategic policy support. While structured digital 
+systems promise improved data accuracy, reduced clinical errors, and enhanced 
+service coordination, these benefits are often compromised by fragmented system 
+integration, limited digital literacy, and inconsistent organizational commitment. 
+Case studies and longitudinal reviews stress that long-term sustainability depends
+
+
+on supportive leadership, standardized data entry, stakeholder engagement, and 
+a robust evaluation framework.
+      Key studies also draw attention to persistent challenges in data quality, 
+interoperability, and system usability. Open-source systems and proprietary 
+platforms alike struggle with underdeveloped user interfaces, limited analytics 
+capabilities, and inadequate customization for low-resource or outpatient contexts. 
+Moreover, cybersecurity concerns, insufficient technical infrastructure, and 
+resistance to workflow changes further hinder system effectiveness-particularly 
+in resource-constrained healthcare environments. Addressing these issues 
+requires adaptable systems that balance technical sophistication with accessibility 
+and organizational fit. The evolution of clinical decision support systems (CDSS) 
+and smart scheduling tools reveals a growing focus on predictive analytics, risk 
+stratification, and personalized care. Literature confirms that AI-enhanced 
+scheduling and return visit risk models can optimize patient flow and improve 
+resource allocation. However, their practical adoption is constrained by lack of real- 
+time integration, minimal validation in real-world settings, and challenges in 
+aligning algorithms with actual provider routines and patient preferences. Risk 
+models must also integrate both structured and unstructured health data, including 
+social determinants of health, while remaining transparent, secure, and scalable. 
+In addition, studies affirm that well-designed dashboards, descriptive analytics, 
+and automated report generators play a vital role in turning complex patient data 
+into actionable insights for clinical and administrative use. However, the success 
+of these tools hinges on interoperability standards (e.g., HL7, FHIR), real-time data
+
+
+accuracy, user training, and alignment with the clinical workflow. Without these 
+elements, decision support tools risk underutilization or user fatigue. In direct 
+response to these multidimensional challenges and insights, HealthBase was 
+designed as a secure, modular, and intelligent clinical information system tailored 
+for the outpatient environment of Dr. Leelin Medical Clinic. Its subsystems address 
+the core needs identified in the literature: patient information management, 
+intelligent scheduling, real-time data visualization, and risk-aware predictive 
+analytics. By embedding role-based access controls, machine learning models for 
+return visit risk, adaptive appointment modules, and exportable reporting 
+dashboards, HealthBase bridges the gap between academic research and 
+practical system application. It aligns with evidence-based design principles by 
+focusing on usability, modular scalability, and data-driven decision-making. 
+Ultimately, HealthBase embodies a human-centered, analytics-supported 
+approach to digital healthcare transformation. It addresses identified literature 
+gaps such as weak interoperability, inconsistent EHR adoption, and limited use of 
+predictive modeling in outpatient clinics. The system offers a forward-looking, 
+evidence-informed solution that enhances clinical workflows, strengthens data 
+governance, and supports early interventions-thus positioning itself as a 
+replicable and sustainable model for other outpatient healthcare settings seeking 
+to transition into intelligent, digitally mature operations.
+
+
+Relevance of Related Literature to the Current Study
+Table 2.1 Comparisons/Differences of Previous and Present Study
+
+Title
+Author( 
+s)
+Date
+Key Findings
+Key Gaps
+Present 
+Study
+Evaluating 
+the effects 
+of 
+electronic 
+health 
+records 
+system 
+adoption on 
+the 
+performanc 
+e of 
+Malaysian 
+healthcare 
+providers
+M. I. M.
+Salleh, 
+R.
+Abdulla 
+h, and 
+N.
+Zakaria
+June 
+30,
+202
+1
+The adoption 
+of EHR 
+systems at Dr. 
+Leelin Medical 
+Clinic 
+improved 
+healthcare 
+provider 
+performance 
+by increasing 
+data accuracy, 
+enhancing 
+care 
+efficiency, and 
+strengthening 
+communicatio 
+n among 
+medical staff. 
+The study also 
+showed 
+improved 
+clinical 
+decision- 
+making and 
+optimized 
+workflow due 
+to EHR 
+integration.
+While the 
+study 
+emphasizes 
+general 
+performance 
+improvement 
+from EHR 
+use, it lacks 
+focus on 
+advanced 
+features such 
+as intelligent 
+scheduling 
+and predictive 
+risk tools, 
+which are 
+essential for 
+optimizing 
+follow-up care 
+and resource 
+allocation.
+The current 
+study 
+(HealthBase) 
+builds on 
+these findings 
+by integrating 
+patient 
+management 
+with smart 
+scheduling 
+and 
+readmission 
+risk 
+prediction- 
+features not 
+covered in the 
+previous 
+study. It is 
+designed 
+specifically for 
+clinics like Dr. 
+Leelin Medical 
+Clinic to 
+improve 
+clinical 
+outcomes, 
+streamline 
+processes, 
+and maximize 
+the benefits of 
+digital health 
+systems.
+
+
+25 years of 
+electronic 
+health 
+record 
+implementa 
+tion 
+processes: 
+Scoping 
+review.
+Journal of 
+Medical 
+Internet 
+Research
+H.
+Finnega 
+n and N. 
+Mountfo 
+rd
+Mar 
+ch 3,
+202
+5
+This scoping 
+review 
+explores the 
+25-year 
+evolution of 
+Electronic 
+Health 
+Records 
+(EHRs),
+showing how 
+they have 
+developed 
+from basic 
+data 
+repositories 
+into core tools 
+for healthcare 
+delivery. It 
+highlights the 
+importance of 
+implementatio 
+n processes 
+for maximizing 
+the benefits of 
+EHRs,
+particularly in 
+improving 
+efficiency and 
+patient care.
+Despite 
+progress, 
+implementatio 
+n challenges 
+remain- 
+especially in 
+areas such as 
+system 
+interoperability
+, standardized 
+procedures, 
+and user 
+engagement. 
+These gaps 
+prevent full 
+optimization of 
+EHRs in 
+clinical 
+settings like 
+Dr. Leelin 
+Medical Clinic.
+The 
+HealthBase 
+project 
+responds to 
+these gaps by 
+introducing a 
+comprehensiv 
+e, clinic- 
+specific 
+patient 
+management 
+system. It 
+focuses on 
+intelligent 
+scheduling, 
+readmission 
+risk prediction, 
+and user- 
+friendly 
+design. By 
+prioritizing 
+interoperability 
+and usability, 
+HealthBase 
+aims to 
+overcome 
+existing 
+implementatio 
+n barriers and 
+enhance both 
+workflow 
+efficiency and 
+patient 
+outcomes at 
+Dr. Leelin 
+Medical Clinic.
+Open- 
+source
+M.
+Shaikh,
+April 
+1,
+This review 
+underscored
+The study 
+identified
+HealthBase 
+fills these
+
+
+electronic 
+health 
+record 
+systems: A 
+systematic 
+review of 
+most recent 
+advances
+A. H. M.
+Vayani, 
+S.
+Akram, 
+and N. 
+Qamar
+202
+2
+the growing 
+potential of 
+open-source 
+EHR platforms 
+in offering 
+flexible, cost- 
+efficient 
+healthcare 
+data 
+management 
+solutions. It 
+highlighted 
+benefits such 
+as 
+customization, 
+community- 
+driven 
+innovation, 
+and alignment 
+with open 
+standards, as 
+well as how 
+some open- 
+source 
+platforms 
+perform 
+against 
+HIMSS- 
+EMRAM
+stages.
+major 
+concerns in 
+implementatio 
+n, including 
+lack of 
+structured 
+evaluation 
+models, 
+inconsistent 
+compliance 
+with 
+healthcare 
+standards, 
+and variability 
+in user and 
+developer 
+support. It 
+also found 
+that many 
+open-source 
+EHRs lacked 
+advanced 
+functionalities 
+like predictive 
+modeling and 
+intelligent 
+workflows.
+gaps by being 
+a standards- 
+compliant, 
+open-source 
+clinical system 
+that integrates 
+essential 
+features such 
+as patient risk 
+prediction and 
+intelligent 
+scheduling. It 
+adheres to 
+HIMSS- 
+EMRAM
+principles 
+while focusing 
+on improving 
+care delivery 
+and efficiency 
+within 
+outpatient 
+settings.
+Usability 
+evaluation 
+of 
+electronic 
+health 
+records
+Antor, 
+E.,
+Owusu- 
+Marfo, 
+J., &
+Kissi, J.
+202
+4
+This research 
+focused on 
+evaluating 
+EHR usability 
+and how 
+interface 
+design 
+impacts
+Although 
+usability was 
+the central 
+theme, the 
+study did not 
+consider how 
+poor usability 
+might affect
+HealthBase 
+adopts a user- 
+centered 
+design 
+framework 
+tailored for 
+outpatient 
+clinic users,
+
+
+
+
+
+system 
+adoption. It 
+concluded that 
+user 
+satisfaction 
+and system 
+efficiency are 
+heavily 
+influenced by 
+intuitive 
+design, fast 
+navigation, 
+and 
+integration 
+into routine 
+workflows, 
+especially in 
+high-pressure 
+clinical 
+environments.
+newer 
+functions like 
+smart 
+scheduling or 
+predictive 
+modules. It 
+also did not 
+examine 
+outpatient- 
+specific 
+design 
+principles, 
+which require 
+lightweight 
+and highly 
+accessible 
+systems for 
+smaller clinics.
+particularly 
+physicians 
+and 
+administrators 
+at Dr. Leelin 
+Medical Clinic. 
+Its UI/UX 
+prioritizes 
+intuitive 
+navigation for 
+patient 
+management, 
+integrated 
+scheduling, 
+and predictive 
+insights- 
+improving not 
+only usability 
+but also 
+clinical 
+responsivenes 
+s and 
+operational 
+control.
+Nurses' 
+satisfaction 
+with 
+adopting a 
+homegrown 
+public 
+tertiary 
+hospital 
+electronic 
+medical 
+record 
+during the 
+pandemic
+Rosales
+, N. R. 
+B.
+202
+4
+This study 
+evaluated 
+user 
+acceptance of 
+a custom-built 
+EMR system 
+deployed in a 
+public hospital 
+during
+COVID-19. It
+highlighted 
+that 
+homegrown 
+systems
+The study 
+focused on 
+user 
+satisfaction 
+but did not 
+delve deeply 
+into how such 
+systems could 
+integrate 
+advanced 
+features like 
+predictive 
+analytics, nor 
+did it offer
+HealthBase 
+builds on the 
+notion of 
+custom- 
+tailored 
+clinical 
+systems by 
+creating a 
+solution 
+specifically for 
+Dr. Leelin 
+Medical Clinic. 
+It surpasses 
+the prior
+
+
+
+
+
+tailored to the 
+unique needs 
+of specific 
+hospitals can 
+significantly 
+boost user 
+satisfaction 
+and 
+operational 
+relevance, 
+especially 
+when external 
+solutions lack 
+flexibility.
+insights on 
+their 
+scalability or 
+adaptability to 
+outpatient 
+environments. 
+The model 
+also lacked 
+comparative 
+performance 
+analysis 
+against 
+commercial 
+systems.
+study's scope 
+by integrating 
+data science 
+for return visit 
+prediction, 
+performance 
+monitoring, 
+and smart 
+scheduling, 
+offering a 
+scalable 
+outpatient 
+solution with 
+modern 
+analytical 
+capabilities.
+Hospital 
+readmissio 
+n risk 
+prediction 
+using EHR 
+data: A 
+systematic 
+review
+Holmgre 
+n, L. et 
+al.
+202
+0
+This review 
+provided 
+evidence that 
+EHR-based 
+predictive 
+models can 
+effectively 
+forecast 
+hospital 
+readmissions 
+by analyzing 
+patterns in 
+demographics
+, clinical 
+history, 
+comorbidities, 
+and past 
+admissions. It 
+underscored 
+the clinical 
+value of early
+While the 
+review 
+highlighted the 
+potential of 
+risk prediction, 
+most models 
+were hospital- 
+based and 
+lacked 
+adaptability for 
+outpatient 
+use. Many 
+studies 
+focused on 
+retrospective 
+analytics with 
+limited real- 
+time 
+applications or 
+integration 
+into
+HealthBase 
+brings these 
+predictive 
+capabilities 
+into the 
+outpatient 
+context of Dr. 
+Leelin Medical 
+Clinic. It 
+integrates a 
+real-time 
+return visit risk 
+prediction 
+module 
+directly within 
+the scheduling 
+and patient 
+management 
+system- 
+allowing staff 
+to act
+
+
+
+
+
+risk 
+identification 
+in reducing 
+rehospitalizati 
+on rates and 
+improving 
+healthcare 
+planning.
+operational 
+workflows like 
+patient 
+scheduling or 
+care planning.
+proactively on 
+high-risk 
+patients 
+during clinic 
+visits and 
+manage 
+resources 
+more 
+effectively.
+Facing the 
+digital 
+frontier: 
+Exploring 
+user 
+acceptance 
+of 
+electronic 
+health 
+records in 
+the 
+Philippines
+De 
+Mesa,
+R. Y. H.
+et al.
+202
+4
+This study 
+emphasized 
+the 
+importance of 
+perceived 
+usefulness 
+and ease of 
+use in shaping 
+healthcare 
+professionals' 
+attitudes 
+toward EHR 
+systems in the 
+Philippines.
+Key findings 
+revealed that 
+systems that 
+align well with 
+clinical 
+workflows and 
+are designed 
+with user 
+feedback lead 
+to higher 
+acceptance 
+and sustained 
+usage.
+Although the 
+study provided 
+critical 
+sociotechnical 
+insights, it 
+focused 
+mostly on user 
+acceptance 
+rather than on 
+the technical 
+capabilities of 
+EHR systems 
+like smart 
+scheduling or 
+predictive 
+features. It 
+also did not 
+address how 
+system 
+adoption 
+impacts long- 
+term 
+operational 
+performance 
+in outpatient 
+settings.
+HealthBase 
+incorporates 
+the principles 
+of user- 
+centered 
+design and 
+local context 
+alignment to 
+drive strong 
+adoption at 
+Dr. Leelin 
+Medical Clinic. 
+Going beyond 
+EHR
+acceptance, 
+the system 
+integrates 
+intelligent 
+features such 
+as predictive 
+risk scoring 
+and 
+automated 
+reporting to 
+demonstrate 
+tangible 
+improvements 
+in outpatient 
+service
+
+
+
+
+
+
+
+delivery and 
+user 
+engagement.
+Impact of 
+patient 
+access to 
+their 
+electronic 
+health 
+record: 
+Systematic 
+review
+Tapuria,
+A. et al.
+202
+1
+This study 
+confirmed that 
+giving patients 
+access to their 
+EHRs
+improves 
+transparency, 
+patient 
+engagement, 
+and 
+adherence to 
+treatment 
+plans. It 
+highlighted 
+how patient 
+portals and 
+interactive 
+systems can 
+support 
+shared 
+decision- 
+making and 
+increase 
+patient trust in 
+healthcare 
+services.
+However, the 
+review 
+focused 
+mainly on 
+patient-facing 
+features and 
+did not 
+explore 
+backend 
+systems or 
+how 
+healthcare 
+providers can 
+use patient 
+data for 
+analytics or 
+decision- 
+making.
+Integration of 
+patient access 
+with predictive 
+functions or 
+smart 
+scheduling 
+was not 
+addressed.
+While 
+HealthBase 
+does not yet 
+include direct 
+patient access 
+portals, it 
+centralizes 
+patient data in 
+a way that 
+enhances 
+provider- 
+patient 
+communicatio 
+n, allowing 
+clinicians to 
+generate 
+visual 
+summaries 
+and risk 
+assessments. 
+Future 
+updates may 
+incorporate 
+patient 
+access, but 
+the current 
+version 
+prioritizes 
+provider-led 
+engagement 
+and decision- 
+making.
+
+
+Big data 
+analytics in 
+healthcare: 
+Promise 
+and 
+potential
+Zhang,
+Y. et al.
+202
+0
+This article 
+discussed 
+how big data 
+technologies 
+have 
+transformed 
+healthcare by 
+enabling the 
+extraction of 
+meaningful 
+insights from 
+vast clinical 
+datasets. It 
+pointed out 
+that predictive 
+modeling, 
+trend analysis, 
+and real-time 
+decision 
+support are 
+increasingly 
+being adopted 
+to improve 
+patient 
+outcomes and 
+resource 
+efficiency.
+While 
+highlighting 
+opportunities, 
+the article 
+lacked 
+concrete 
+applications in 
+outpatient 
+settings and 
+did not 
+elaborate on 
+implementatio 
+n challenges 
+for small 
+clinics. It 
+remained
+high-level, 
+focusing more 
+on hospital 
+systems and 
+large-scale 
+deployments.
+HealthBase 
+operationalize 
+s these big 
+data insights 
+at the 
+outpatient 
+level by using 
+machine 
+learning for 
+patient risk 
+scoring and 
+scheduling 
+optimization. It 
+applies real- 
+time data 
+analytics to 
+improve 
+patient flow, 
+reduce 
+unnecessary 
+visits, and 
+enhance 
+decision- 
+making- 
+delivering big 
+data 
+functionality to 
+smaller clinical 
+environments.
+Database 
+manageme 
+nt in 
+healthcare: 
+Design and 
+implementa 
+tion
+Chen,
+H. et al.
+202
+0
+This study 
+detailed the 
+foundational 
+role of 
+effective 
+database 
+management 
+in healthcare 
+systems. It
+While the 
+study provided 
+strong insights 
+into database 
+theory, it 
+lacked a 
+practical case 
+application in 
+outpatient
+HealthBase 
+builds on 
+these 
+database 
+design 
+principles and 
+applies them 
+directly to the 
+needs of
+
+
+
+
+
+emphasized 
+how well- 
+structured 
+data storage, 
+relational 
+models, and 
+standardized 
+query systems 
+enhance 
+health data 
+reliability, 
+integrity, and 
+accessibility. It 
+also 
+highlighted the 
+importance of 
+clinical data 
+models that 
+support 
+scalability and 
+performance.
+clinical 
+settings. It did 
+not explore 
+how database 
+structures can 
+support 
+patient care 
+features like 
+risk prediction, 
+smart 
+scheduling, or 
+dynamic 
+reporting at 
+smaller 
+healthcare 
+institutions.
+outpatient 
+clinics like Dr. 
+Leelin Medical 
+Clinic. It 
+incorporates 
+optimized 
+relational 
+databases for 
+structured 
+data handling, 
+integrates 
+secure query 
+systems for 
+real-time 
+decision- 
+making, and 
+supports 
+analytics and 
+predictive 
+tools that 
+depend on 
+clean, well- 
+structured 
+health data.
+Medication 
+errors: 
+What they 
+are, how 
+they 
+happen, 
+and how to 
+avoid them
+Aronson
+, R.
+202
+0
+This 
+foundational 
+article 
+explained the 
+root causes of 
+medication 
+errors, 
+identifying 
+poor 
+documentatio 
+n, illegible 
+handwriting, 
+and 
+miscommunic
+Although the 
+article 
+advocated for 
+electronic 
+health 
+systems, it did 
+not explore 
+predictive 
+analytics or 
+dynamic 
+scheduling 
+features. It 
+also did not 
+contextualize
+HealthBase 
+directly 
+supports 
+medication 
+safety by 
+eliminating 
+manual 
+documentatio 
+n through 
+electronic 
+health record 
+features.
+Additionally, 
+by flagging
+
+
+
+
+
+ation as 
+significant 
+contributors. It 
+recommended 
+digitized 
+recordkeeping 
+and decision 
+support 
+systems as 
+key 
+interventions 
+to reduce risks 
+and improve 
+medication 
+safety.
+its 
+recommendati 
+ons within the 
+outpatient 
+clinic workflow 
+or consider 
+low-resource 
+digital 
+implementatio 
+ns.
+patients at risk 
+of frequent 
+returns due to 
+chronic 
+conditions or 
+medication 
+issues, 
+HealthBase 
+enables more 
+focused
+follow-ups and 
+minimizes the 
+risk of repeat 
+errors in 
+outpatient 
+care.
+Interoperabi 
+lity 
+frameworks 
+linking 
+mHealth 
+applications 
+to 
+electronic 
+record 
+systems
+Ndlovu, 
+K.,
+Mars, 
+M., &
+Scott,
+R. E.
+202
+1
+This study 
+identified the 
+critical need 
+for 
+interoperability 
+in health 
+systems, 
+especially 
+between 
+mobile health 
+(mHealth) 
+tools and 
+centralized 
+EHR
+platforms. It 
+outlined 
+existing 
+frameworks 
+(e.g., HL7,
+FHIR) and 
+advocated for
+The research 
+focused 
+mainly on 
+interoperability 
+at the national 
+or hospital- 
+system level, 
+and did not 
+explore 
+implementatio 
+n in small 
+clinics. It also 
+did not 
+propose how 
+predictive or 
+scheduling 
+tools could 
+operate within 
+these 
+frameworks 
+for real-time
+HealthBase 
+integrates 
+interoperability 
+standards 
+such as HL7 
+and FHIR to 
+allow for 
+future 
+integration 
+with external 
+systems and 
+mobile apps. 
+Even though it 
+is deployed in 
+a single 
+outpatient 
+clinic, the 
+system is built 
+to be scalable 
+and 
+interoperable
+
+
+
+
+
+consistent 
+data 
+exchange 
+protocols to 
+ensure 
+seamless 
+integration 
+and care 
+continuity.
+clinical 
+support.
+-ensuring 
+readiness for 
+broader 
+ecosystem 
+participation in 
+the future.
+Applying 
+requisite 
+imagination 
+to 
+safeguard 
+electronic 
+health 
+record 
+transitions
+Sittig, D. 
+F.,
+Lakhani, 
+P., &
+Singh, 
+H.
+202
+2
+The study 
+explored how 
+adopting 
+"requisite 
+imagination" 
+can reduce 
+risks during 
+EHR system 
+transitions. It 
+emphasized 
+anticipating 
+failure points, 
+designing for 
+user needs, 
+and testing 
+systems in 
+real-world 
+workflows to 
+ensure 
+reliability and 
+usability 
+during 
+implementatio 
+n.
+While the 
+study provided 
+strategic 
+recommendati 
+ons, it did not 
+present a 
+concrete 
+system or 
+software 
+solution. It 
+lacked focus 
+on specific 
+tools such as 
+dashboards, 
+scheduling 
+optimizations, 
+or patient risk 
+prediction 
+relevant to 
+outpatient 
+settings.
+HealthBase 
+adopts this 
+principle by 
+involving 
+users in the 
+design phase, 
+anticipating 
+clinic-specific 
+risks (e.g., 
+staff overload, 
+data 
+duplication), 
+and testing 
+within actual 
+outpatient 
+workflows at 
+Dr. Leelin 
+Medical Clinic. 
+The system 
+includes 
+safeguards 
+like user 
+authentication, 
+redundancy, 
+and real-time 
+tracking of 
+health data 
+inputs and 
+outputs.
+
+
+A
+systematic 
+literature 
+review of 
+health 
+information 
+systems for 
+healthcare
+Epiziton 
+e, A.,
+Moyane
+, S. P.,
+& 
+Agbeha 
+dji, I. E.
+202
+3
+This 
+comprehensiv 
+e review 
+synthesized 
+global HIS 
+implementatio 
+ns and 
+revealed how 
+these systems 
+improve 
+service 
+delivery, 
+optimize 
+workflows, 
+and support 
+clinical 
+decision- 
+making. It also 
+stressed the 
+importance of 
+aligning 
+system 
+capabilities 
+with user 
+needs and 
+facility size.
+Many systems 
+reviewed were 
+focused on 
+hospitals, with 
+limited 
+adaptation for 
+smaller 
+outpatient 
+clinics. Few 
+studies 
+incorporated 
+predictive 
+analytics or 
+smart 
+scheduling, 
+and even 
+fewer 
+addressed 
+localized 
+implementatio 
+n barriers in 
+resource- 
+constrained 
+environments.
+HealthBase 
+answers this 
+gap by 
+delivering a 
+lightweight yet 
+powerful 
+system 
+tailored for a 
+Philippine 
+outpatient 
+clinic. It 
+merges core 
+HIS functions 
+with modern 
+features like 
+predictive 
+modeling and 
+adaptive 
+scheduling, 
+reflecting an 
+evolution from 
+generic HIS to 
+a specialized, 
+contextualized 
+platform for 
+private 
+outpatient 
+facilities.
+Deploying 
+digital 
+health tools 
+within large, 
+complex 
+health 
+systems: 
+Key 
+considerati 
+ons for
+Marwah 
+a, J. S.
+et al.
+202
+2
+This study 
+emphasized 
+critical 
+success 
+factors for 
+implementing 
+digital health 
+tools: 
+stakeholder 
+involvement,
+The study 
+focused 
+largely on 
+large, complex 
+health 
+systems and 
+lacked 
+examples of 
+digital tool 
+implementatio
+HealthBase 
+translates 
+these 
+adoption 
+strategies into 
+a smaller 
+outpatient 
+setting by 
+prioritizing 
+user-centered
+
+
+adoption 
+and 
+implementa 
+tion
+
+
+scalable 
+design, 
+workflow 
+alignment, 
+and 
+continuous 
+support. It 
+highlighted 
+that even 
+advanced 
+digital tools 
+fail without 
+careful 
+planning and 
+user adoption 
+strategies.
+n in smaller 
+outpatient 
+settings. It 
+also did not 
+highlight 
+specific 
+functionalities 
+like intelligent 
+scheduling or 
+predictive 
+analytics that 
+could improve 
+decision- 
+making in 
+smaller clinics.
+design, 
+streamlined 
+workflows, 
+and targeted 
+training.
+Unlike general 
+recommendati 
+ons, 
+HealthBase 
+embeds smart 
+scheduling 
+and return 
+visit risk 
+prediction 
+directly into its 
+clinical 
+operations- 
+bridging 
+strategy with 
+functionality.
+Hospital 
+readmissio 
+n risk 
+prediction 
+using EHR 
+data: A 
+systematic 
+review
+Holmgre 
+n, L. et 
+al.
+202
+0
+This review 
+validated the 
+growing use of 
+EHR-based 
+predictive 
+models in 
+identifying 
+patients at risk 
+for 
+readmission. It 
+identified 
+demographic, 
+clinical, and 
+administrative 
+data as critical 
+inputs for 
+accurate 
+predictions
+While 
+insightful, the 
+study primarily 
+focused on 
+hospital 
+settings and 
+general 
+readmission 
+risks. It did not 
+apply or test 
+models in 
+outpatient 
+environments 
+or settings 
+where return 
+visits (rather 
+than 
+readmissions)
+HealthBase 
+adapts these 
+predictive 
+techniques to 
+outpatient 
+care, focusing 
+on patients 
+likely to return 
+due to 
+recurring 
+conditions. By 
+modeling 
+historical visit 
+data, vital 
+signs, and 
+health 
+patterns, 
+HealthBase
+
+
+
+
+
+and promoted 
+model 
+integration in 
+hospital 
+systems for 
+proactive care 
+planning.
+are a more 
+relevant 
+metric.
+supports 
+timely follow- 
+ups that 
+improve 
+continuity of 
+care in 
+resource- 
+limited, clinic- 
+based 
+settings.
+Impact of 
+patient 
+access to 
+their 
+electronic 
+health 
+record: 
+Systematic 
+review
+Tapuria,
+A. et al.
+202
+1
+This study 
+found that 
+patient access 
+to EHRs 
+fosters greater 
+patient 
+engagement, 
+improved 
+adherence to 
+treatment 
+plans, and 
+increased 
+satisfaction 
+with care. It 
+concluded that 
+EHR
+transparency 
+contributes 
+positively to 
+outcomes, 
+especially 
+when patients 
+can review 
+health data 
+and 
+appointments.
+The study did 
+not address 
+how systems 
+can manage 
+patient- 
+generated 
+data or 
+integrate 
+patient 
+preferences 
+into 
+scheduling. It 
+also lacked 
+design 
+strategies for 
+how access 
+features could 
+be safely 
+deployed in 
+small private 
+clinics without 
+overwhelming 
+the system or 
+compromising 
+privacy.
+HealthBase 
+supports 
+controlled 
+patient access 
+via account- 
+based login 
+and role- 
+restricted 
+views, 
+allowing 
+patients to 
+review 
+profiles, 
+appointments, 
+and receive 
+alerts. The 
+system aligns 
+with Tapuria 
+et al.'s 
+findings by 
+enhancing 
+transparency 
+while 
+maintaining 
+data integrity 
+and privacy in 
+the outpatient 
+context.
+
+
+Facing the 
+digital 
+frontier: 
+Exploring 
+user 
+acceptance 
+of 
+electronic 
+health 
+records in 
+the 
+Philippines
+De 
+Mesa,
+R. Y. H.
+et al.
+202
+4
+This local 
+study revealed 
+that trust, 
+ease of use, 
+and perceived 
+usefulness 
+were critical 
+factors 
+influencing 
+EHR adoption 
+among Filipino 
+healthcare 
+workers. It 
+emphasized 
+cultural and 
+institutional 
+readiness as 
+major 
+enablers of 
+successful 
+implementatio 
+n.
+Though it 
+presented 
+adoption 
+insights, the 
+study did not 
+propose or 
+assess a 
+system 
+addressing 
+the unique 
+needs of 
+outpatient 
+clinics. It also 
+did not focus 
+on the 
+operational 
+impact of 
+digital tools on 
+scheduling or 
+clinical 
+forecasting.
+HealthBase 
+incorporates 
+local adoption 
+considerations 
+by using 
+intuitive user 
+interfaces, 
+culturally 
+sensitive 
+workflows, 
+and simplified 
+data entry 
+forms for 
+Filipino 
+clinicians. By 
+addressing 
+usability 
+concerns and 
+deploying 
+locally 
+relevant tools, 
+HealthBase 
+bridges user 
+readiness with 
+technical 
+capability.
+An 
+examinatio 
+n of large- 
+scale 
+electronic 
+health 
+records 
+implementa 
+tion in 
+primary 
+healthcare 
+centers in
+Alharthi,
+M. et al.
+202
+3
+This study 
+documented 
+challenges 
+during large- 
+scale EHR 
+rollouts, such 
+as lack of 
+customization, 
+system 
+rigidity, and 
+workflow 
+mismatch. It
+The research 
+focused on 
+national-scale 
+systems and 
+overlooked 
+smaller, more 
+agile models 
+that prioritize 
+patient 
+scheduling or 
+predictive care 
+in primary
+HealthBase 
+addresses 
+these 
+shortcomings 
+by offering a 
+modular 
+system 
+designed 
+specifically for 
+smaller clinics. 
+Its flexible 
+architecture
+
+
+
+
+
+also 
+highlighted 
+that effective 
+data migration 
+and localized 
+system design 
+are crucial to 
+EHR success.
+clinics. It did 
+not provide 
+actionable 
+frameworks 
+for tailoring 
+EHRs to 
+specific clinic 
+functions.
+allows for 
+smart 
+scheduling, 
+patient- 
+specific 
+workflows, 
+and predictive 
+tools that 
+adapt to daily 
+outpatient 
+routines- 
+ensuring 
+seamless 
+adoption and 
+scalable 
+performance.
+Nurses' 
+satisfaction 
+with 
+adopting a 
+homegrown 
+public 
+tertiary 
+hospital 
+electronic 
+medical 
+record 
+during the 
+pandemic
+Rosales
+, N. R. 
+B.
+202
+4
+This study 
+demonstrated 
+that locally 
+developed 
+EMR systems 
+can achieve 
+high levels of 
+user 
+satisfaction if 
+they address 
+specific 
+institutional 
+needs. Key 
+features that 
+contributed to 
+satisfaction 
+included 
+simplicity, fast 
+data retrieval, 
+and relevant 
+alert systems.
+The study 
+focused on a 
+public tertiary 
+hospital, not 
+an outpatient 
+setting. It did 
+not explore 
+advanced 
+features like 
+predictive 
+analytics, 
+smart 
+appointment 
+setting, or 
+integration 
+with cloud- 
+based hosting 
+options 
+suitable for 
+private clinics.
+HealthBase 
+draws 
+inspiration 
+from this 
+homegrown 
+approach and 
+applies it in a 
+private clinic 
+environment. 
+With features 
+like embedded 
+alerts, rapid 
+retrieval, 
+cloud/local 
+hosting 
+options, and 
+visualized 
+reports, 
+HealthBase 
+promotes 
+satisfaction 
+while
+
+
+
+
+
+
+
+introducing 
+advanced 
+capabilities 
+missing in the 
+referenced 
+study.
+Designing a 
+mobile 
+health 
+platform for 
+effective 
+medical 
+records 
+manageme 
+nt in 
+hospitals
+Yuvaraj 
+an, C. et 
+al.
+202
+4
+This study 
+focused on 
+mobile health 
+(mHealth) 
+solutions, 
+highlighting 
+how mobile 
+platforms 
+improve 
+accessibility, 
+continuity of 
+care, and 
+decentralized 
+recordkeeping
+. It stressed 
+the 
+importance of 
+real-time data 
+entry and 
+cross-device 
+accessibility 
+for modern 
+clinical 
+practice.
+While 
+innovative, the 
+study's mobile 
+health 
+platform 
+lacked deeper 
+integration 
+with risk 
+analytics, 
+patient 
+prioritization, 
+and 
+administrative 
+dashboards. It 
+also did not 
+address return 
+visit prediction 
+or smart 
+patient flow 
+management.
+HealthBase 
+incorporates 
+mHealth 
+principles by 
+supporting 
+mobile- 
+responsive 
+web access 
+and fast data 
+input, while 
+extending 
+functionality to 
+include 
+scheduling 
+optimization 
+and return risk 
+scoring. Its 
+hybrid hosting 
+approach 
+balances 
+mobile 
+usability with 
+predictive 
+decision 
+support 
+tailored for 
+outpatient 
+needs.
+
+
+
+
+Chapter 3 
+METHODOLOGY
+
+Research Design
+
+      This study will utilize a quantitative research design to develop and evaluate 
+HealthBase: Patient Management, Smart Scheduling, and Return Visit Risk 
+Prediction tailored specifically for Dr. Leelin Medical Clinic. The research will follow 
+a structured two-phase approach: an initial diagnostic assessment phase and a 
+subsequent system development and evaluation phase. In the first phase, a 
+diagnostic assessment will be conducted through structured surveys, interviews, 
+and direct observation of clinic operations. The goal is to clearly identify the 
+existing challenges, workflow processes, and specific needs of healthcare 
+professionals and clinic staff. This initial assessment will gather baseline 
+information about patient scheduling efficiency, accuracy of patient information 
+handling, current workflow challenges, and staff satisfaction levels with existing 
+clinic processes. The second phase involves the design, development, and 
+implementation of the HealthBase system. This phase will follow an Agile Scrum 
+methodology, using iterative two-week development cycles. Each cycle will focus 
+on specific features such as patient registration, patient information management, 
+smart scheduling, medical data organization, and predictive analytics for 
+identifying patient return visit risks. Throughout the development process, 
+continuous feedback from healthcare providers and clinic staff will be actively 
+gathered and integrated to ensure the final system aligns closely with real clinic 
+needs and workflows.
+
+
+      To evaluate the effectiveness of the implemented HealthBase system, a 
+comprehensive assessment will be conducted, focusing on key performance areas 
+including operational efficiency, clinical accuracy, user satisfaction, and overall 
+impact on patient care. Data collection methods will include comparative analysis 
+of clinic operations before and after system implementation, feedback surveys, 
+system performance records, and usage logs. Standardized evaluation tools will 
+measure how effectively HealthBase improves patient information management, 
+scheduling efficiency, workload management, and the accuracy of predictive 
+analytics. The quantitative data gathered will then be analyzed using appropriate 
+statistical methods to clearly demonstrate the system's effectiveness and provide 
+insights into potential areas for further improvement. Ultimately, this research 
+design will provide measurable and actionable evidence demonstrating how 
+HealthBase can enhance outpatient clinic operations, improve patient care 
+delivery, and support clinical decision-making at Dr. Leelin Medical Clinic.
+.
+
+Software Development Methodology
+
+      For this study, the HealthBase: Patient Management, Smart Scheduling, 
+and Return Visit Risk Prediction system for Dr. Leelin Medical Clinic will be 
+developed using the Agile Scrum methodology. This method allows the project 
+team to work flexibly, regularly adapting to clinic requirements and ensuring the 
+system closely aligns with user needs. By breaking the development process into 
+smaller, manageable phases called "sprints," the team can steadily build and refine 
+HealthBase, making consistent progress throughout the project. Initially, the
+
+
+project team will collaborate closely with clinic staff and healthcare professionals 
+to clearly define and prioritize the features required for HealthBase. This set of 
+requirements, known as the product backlog, will serve as the roadmap for 
+development. Each sprint will last two weeks and will focus on building specific 
+modules such as patient registration, patient information management, smart 
+appointment scheduling, and predictive analytics. During each sprint, the team will 
+have brief daily meetings to discuss progress, identify issues promptly, and keep 
+the development process running smoothly.
+      At the conclusion of each two-week sprint, completed features will be 
+demonstrated to clinic staff for review and feedback. These regular evaluations 
+help ensure the final product matches clinic expectations and meets real-world 
+needs. Feedback gathered during these reviews will directly influence subsequent 
+development activities, allowing continuous refinement and improvement. Once all 
+planned sprints are completed, HealthBase will undergo thorough testing to 
+confirm its reliability, functionality, and ease of use. User acceptance testing (UAT) 
+involving actual clinic staff will also be conducted to verify the system meets their 
+operational requirements. After successful testing, HealthBase will be 
+implemented for daily use in Dr. Leelin Medical Clinic. Post-implementation, the 
+team will provide ongoing support, collecting user feedback to continuously 
+improve and enhance the system, ensuring it effectively supports clinical 
+operations and patient care.
+.
+
+
+
+
+ 
+
+Figure 3.1 Scrum Methodology
+
+Scrum Phases
+
+      Initiation (Project Vision & Release Planning). In this initial stage, the 
+development team established the vision and clear objectives of the HealthBase 
+system tailored specifically to Dr. Leelin Medical Clinic. The team began by 
+identifying critical clinic processes and challenges through observations, 
+discussions, and structured interviews with clinic staff, doctors, and administrative 
+personnel. Through these activities, key features were identified, including patient 
+registration management, intelligent appointment scheduling, predictive analytics 
+for return-visit risks, and automated medical calculations. The gathered 
+information was compiled into a prioritized list known as the product backlog, 
+serving as a foundation for the subsequent phases of development.
+
+
+      Planning. In the planning phase, the overall vision for HealthBase was 
+divided into manageable and achievable tasks scheduled into two-week 
+development cycles known as "sprints." Each sprint had specific goals and 
+deliverables, prioritized based on their impact on clinic efficiency and patient care. 
+Initial sprints targeted the core functionalities, such as patient information 
+management and smart scheduling, while later sprints addressed more advanced 
+features like predictive analytics and user-interface refinements. Throughout this 
+stage, the team also developed detailed system documentation, wireframes, and 
+diagrams to ensure clear communication and alignment of the design with clinic 
+requirements.
+      Implementation. The implementation phase involved active development 
+of the HealthBase system according to the defined objectives. Team members 
+took responsibility for specific system components, such as patient data modules, 
+predictive analytics tools, scheduling algorithms, and user-friendly interfaces. 
+Regular daily meetings ("daily scrums") facilitated close collaboration, allowing the 
+team to promptly address challenges, track progress, and ensure tasks were 
+completed within each sprint. Continuous testing during this phase confirmed the 
+reliability and functionality of each system feature before moving forward to the 
+next development stage.
+      Daily Scrum. Throughout each sprint, daily scrum meetings served as 
+quick, focused discussions among the development team to review daily progress, 
+share updates, identify immediate concerns, and realign tasks when necessary. 
+These brief meetings ensured smooth coordination, clear communication, and
+
+
+rapid problem resolution, maintaining steady progress aligned with project goals 
+and clinic expectations.
+      Review. At the conclusion of every two-week sprint, completed features 
+were presented to clinic stakeholders, including doctors, healthcare professionals, 
+and administrative staff. These review sessions allowed the team to demonstrate 
+the developed system functionalities, gather valuable feedback, and identify 
+necessary improvements. Stakeholder suggestions were then documented and 
+integrated into subsequent sprints, ensuring that HealthBase continued to evolve 
+in alignment with the real-world needs of Dr. Leelin Medical Clinic.
+      Retrospective. Following each sprint review, a retrospective meeting was 
+conducted for the development team to reflect on their collaboration, progress, and 
+challenges encountered. During these discussions, the team evaluated what 
+worked well, identified areas needing improvement, and defined strategies for 
+enhancing efficiency and effectiveness in future sprints. Issues identified during 
+retrospectives, such as unclear user requirements or technical misunderstandings, 
+were promptly addressed to improve subsequent development cycles.
+      Deployment. The deployment phase marked the completion of 
+HealthBase's development and its transition into everyday clinical operations at 
+Dr. Leelin Medical Clinic. In this phase, the system was officially launched and 
+made accessible to clinic staff and healthcare professionals. Final system testing 
+was performed to verify usability, stability, and overall reliability. Upon deployment, 
+clinic staff could start actively using HealthBase for patient management, 
+scheduling, and clinical decision-making. Beyond initial deployment, the project
+
+
+team remained actively engaged, providing ongoing support, gathering user 
+feedback, and making continuous enhancements to ensure HealthBase 
+consistently met the evolving needs of the clinic and effectively supported high- 
+quality patient care.
+
+
+
+ 
+Figure 3.2 Data Analysis Process
+
+Data analysis in this study follows a structured and systematic approach to 
+gathering, organizing, and interpreting clinic-related data. The aim is to generate 
+useful insights that support informed decisions and improvements within Dr. Leelin 
+Medical Clinic. Two main data analysis techniques were used in developing the 
+HealthBase system: descriptive analytics and predictive analytics. Descriptive 
+analytics provided insights into patient trends, scheduling efficiency, and frequently 
+encountered medical conditions, while predictive analytics allowed the early 
+identification of patients likely needing return visits.
+
+
+      Step 1: Define the Question. Initially, the research team identified clear 
+objectives to guide the data analysis. These objectives were based on the clinic's 
+operational and clinical needs, such as understanding patient scheduling patterns, 
+identifying common reasons for patient visits, and determining factors associated 
+with higher return visit risks.
+      Step 2: Collect the Data. Data was systematically collected from various 
+sources within the clinic, including patient records, medical histories, appointment 
+schedules, and clinical notes. Digital forms were utilized to ensure accurate, 
+consistent data entry. Historical patient records were also reviewed, with 
+appropriate permission, to support predictive analysis.
+      Step 3: Clean the Data. The collected data was carefully reviewed to 
+ensure accuracy and reliability. This step included removing duplicate entries, 
+correcting errors, and addressing missing or incomplete data. Additionally, patient 
+data was standardized, ensuring consistency inareas like medical conditions, age 
+groupings, and clinic visit dates..
+      Step 4: Analyze the Data. Once cleaned, the data was analyzed using 
+descriptive and predictive techniques. Descriptive analytics helped identify 
+patterns in patient demographics, common diagnoses, and clinic workloads, 
+allowing the research team to understand existing clinic workflows clearly. 
+Predictive analytics applied machine learning algorithms, such as Random Forest, 
+to identify risk factors like patient age, medical history, and frequency of previous 
+visits that predicted the likelihood of future clinic visits. This enabled the clinic staff 
+to proactively address patient care needs.
+
+
+      Step 5: Visualization. Finally, findings from the data analysis were 
+presented visually using clear and easy-to-understand tools such as charts, 
+graphs, and dashboards. These visualizations made it simple to spot trends and 
+identify areas requiring attention. A dedicated risk prediction dashboard, featuring 
+clear indicators for patients at higher risk of return visits, allowed healthcare 
+providers to make informed, timely decisions. Visualization tools thus played a 
+significant role in enhancing patient management and optimizing clinic resources 
+effectively at Dr. Leelin Medical Clinic.
+Data-Flow Diagram 
+Context Level Diagram
+ 
+Figure 3.3 Context-Level Diagram of the Proposed System
+
+      This context-level diagram shows how the proposed system, HealthBase: 
+Patient Management, Smart Scheduling, and Return Visit Risk Prediction for Dr. 
+Leelin Medical Clinic, connects and interacts with its main users. It illustrates how 
+the different groups within the clinic staff, doctors, and patients work together
+
+
+through the system. At the center is HealthBase, which serves as the digital link 
+between the administrative staff, healthcare providers, and patients. Clinic staff, 
+such as admins and receptionists, use the system to manage patient profiles, 
+handle appointment queues, update visit records, confirm or reschedule 
+appointments, and generate reports to support clinic operations. Doctors interact 
+with the system by accessing patient health summaries, reviewing consultation 
+notes, viewing diagnoses and medical findings, and receiving suggested follow-up 
+schedules and risk alerts for potential return visits. This helps them make more 
+informed clinical decisions and better manage their daily schedules. Patients 
+contribute to the system by providing registration details, health concerns, medical 
+histories, and appointment requests. They also receive follow-up reminders, 
+optional notifications if they are classified as high-risk, and (if available) access to 
+a patient portal where they can stay updated on their care. Overall, HealthBase 
+serves as a central platform that improves patient management, enhances 
+scheduling, and supports proactive care through risk prediction. It helps streamline 
+clinic workflows, improves coordination between staff and doctors, and keeps 
+patients engaged in their own healthcare journey, ensuring that the clinic runs 
+smoothly and patient care remains the top priority.
+
+
+
+Top-Level Diagram
+
+
+
+Figure 3.3 Top-Level Diagram of the Proposed System
+
+      This diagram illustrates the main functional modules and data flow within 
+the HealthBase system for Dr. Leelin Medical Clinic, showing how patients, 
+doctors, and clinic staff interact with the system to manage clinical information, 
+appointments, risk assessments, and reporting. Patients provide key details during 
+registration, such as full name, sex, age, medical history, and specific health 
+concerns, which are entered by clinic staff into the Patient Registration and 
+Management module. This module manages patient profiles, saves new records, 
+and updates existing ones, ensuring accurate and up-to-date patient information. 
+Clinic Staff handle patient intake, appointment bookings, and record updates 
+through the Smart Scheduling and Appointment Management module. This 
+module factors in doctor availability, consulting hours, urgency levels, and patient
+
+
+preferences to generate an optimized appointment schedule. Staff also use the 
+system to send appointment confirmations and notifications to patients. Doctors 
+access Clinical Data Monitoring and Risk Prediction, where they review patient 
+vitals, progress notes, medical history, and risk scores generated by the system. 
+This helps them identify high-risk patients early and make informed clinical 
+decisions. The system flags patients requiring closer follow-up and provides 
+insights to support proactive care.The Reporting and Data Visualization module 
+gathers medical histories, visit logs, and system activities to generate visual 
+reports and dashboard summaries. These tools help both doctors and clinic staff 
+monitor clinic operations, track patient trends, and identify areas for improvement. 
+Lastly, the System Evaluation module collects feedback, reviews, and status 
+updates from users to assess the system's effectiveness. Evaluation logs and 
+reports help the clinic understand how well HealthBase is performing, ensuring 
+continuous improvement and alignment with clinic needs. Overall, this diagram 
+highlights how HealthBase integrates patient management, scheduling, risk 
+prediction, and reporting into a connected and efficient system, supporting better 
+care delivery, smoother clinic workflows, and data-informed decision-making at Dr. 
+Leelin Medical Clinic
+
+
+Child Diagram
+
+      The Child Diagram provides a more granular view of the system's internal 
+operations, breaking down the core functions outlined in the Top-Level Diagram. 
+It details the workflows for processes 1, 2, 3, 5, 6, 7, and 8, which are vital to the 
+overall performance and functionality of the HealthBase system.
+
+
+
+Figure 3.5. Child Diagram of Add and Manage Patient Records of the Proposed 
+System
+
+
+      This module begins with receiving patient registration, where basic patient 
+details are submitted. The information is then validated for completeness and 
+accuracy. Once verified, the system proceeds to store the patient records in the 
+central database.
+
+
+
+
+
+Figure 3.6. Child Diagram of Manage Clinic Metrics of the Proposed System
+
+      The process starts with collecting Clinic metrics from internal systems. 
+These metrics are then validated to ensure reliability. Validated metrics are saved 
+in the hospital's metrics data store for analysis and institutional reporting.
+
+
+
+ 
+
+
+Figure 3.7. Child Diagram of Generate Reports and Dashboards of the Proposed 
+System
+      This process retrieves necessary data, including patient records and Clinic 
+metrics. The data is compiled into structured reports, which are then distributed as 
+dashboards or summary documents for use by administrative and clinical staff.
+
+
+
+ 
+
+
+Figure 3.8. Child Diagram of Update Medical History of the Proposed System
+
+      Medical history updates start by accessing the patient's existing history. 
+New information is entered by healthcare providers and then saved into the system 
+to maintain a comprehensive and updated medical profile.
+
+
+
+ 
+
+
+Figure 3.9. Child Diagram of Update Health Data of the Proposed System
+
+      The system first receives new health data entries, such as vitals or test 
+results. These are validated for consistency and accuracy. Once confirmed, the 
+health data is saved into the patient's record to reflect their current clinical status.
+
+
+
+ 
+
+
+Figure 3.10. Child Diagram of Update Patient Records of the Proposed System
+
+      This module begins by fetching existing patient data. Authorized users 
+modify or edit the patient's information, and then save the updated record to ensure 
+the profile reflects the latest details.
+
+
+
+ 
+
+Figure 3.11. Child Diagram of Patient Data Requests of the Proposed System
+
+      The process begins when a patient data request is received. The system 
+then validates access rights to confirm authorization. Once access is granted, the 
+system retrieves and sends the requested data while ensuring compliance with 
+data privacy standards.
+
+
+Entity Relationship Diagram
+
+
+Figure 3.12. Entity Relationship Diagram (ERD) of the Proposed System
+
+      The Entity Relationship Diagram (ERD) illustrates how data is structured 
+and connected within the HealthBase system for Dr. Leelin Medical Clinic. At the 
+center is the Patient table, which stores essential patient details, including name, 
+date of birth, contact information, and registration date. This table serves as the 
+foundation, linking to several other key tables using the Patient_ID to ensure 
+consistency across records. The Health Record table holds clinical information 
+such as visit dates, chief complaints, medical history, physical examination details, 
+vital signs, diagnoses, and treatment notes. This table connects directly to the 
+Patient table, allowing the system to track each patient's medical journey 
+accurately. The Appointment table manages scheduling information, including
+
+
+appointment dates, times, types, assigned providers, and appointment status. It 
+links patients and providers to maintain an organized appointment system. 
+Supporting this is the Schedule Availability table, which tracks the available dates 
+and times for each provider. The User Account table manages accounts for all 
+system users, including doctors, clinic staff, and patients. It records details like full 
+name, role, username, and account status, ensuring controlled access across the 
+system.The System Log table records key health data such as blood pressure, 
+heart rate, and temperature, with time-stamped entries linked to each patient. This 
+allows for continuous monitoring of basic health indicators.The Risk Assessment 
+table tracks patient-specific risk evaluations, including assessment dates, risk 
+levels, and indicators, helping clinicians identify patients who may need closer 
+follow-up. The Server table maintains information about the servers running 
+HealthBase, storing details like server type, IP address, and location, supporting 
+system maintenance and stability. Lastly, the Report table handles the generation 
+of various reports, including who generated them, the type of report, format, and 
+generation date, providing clinic staff and doctors with summarized insights for 
+informed decision-making. Overall, the ERD shows how HealthBase integrates 
+patient care, scheduling, clinical documentation, and system operations into a 
+connected, well-organized digital ecosystem, ensuring data consistency, security, 
+and usability across the clinic.
+
+
+
+
+System Architecture
+
+
+
+Figure 3.13. System Architecture of the Proposed System
+
+The system architecture shows how HealthBase connects Dr. Leelin Medical 
+Clinic's staff, doctors, and patients through a secure online platform hosted by 
+Hostinger. All data is protected using SSL/TLS encryption to maintain privacy and 
+security. When users interact with the system, their requests are handled by the 
+web server, which runs the main system functions and manages communication 
+with the database.
+      The system is developed using HTML for the user interface, PHP for 
+backend operations, and CodeIgniter to help organize and simplify the 
+development process. All data, including patient records, health updates, and 
+reports, is stored in a MySQL database, ensuring safe and well-structured data 
+management.
+
+
+For its prediction feature, the system uses Python in Google Colab to run a 
+machine learning model that identifies patients who may be at risk of needing 
+return visits. This supports improved monitoring and decision-making for the 
+clinic's healthcare providers. Dr. Leelin Medical Clinic serves as the system 
+administrator, with full access to all modules. Doctors can update patient details 
+and manage health records, while patients can register, edit their personal 
+information, and request access to their data through their own devices. All 
+information is securely stored and can only be accessed according to each user's 
+designated role in the system.
+.
+
+
+Use-Case Diagram
+
+Figure 3.14 Use-Case Diagram of the Proposed System
+
+This diagram illustrates the main functions and user interactions within the 
+HealthBase system at Dr. Leelin Medical Clinic. It shows what each user group 
+patients, doctors, and clinic staff can do inside the system, helping to clarify roles 
+and responsibilities. Patients can register with the help of the receptionist, view 
+their appointments, update their personal details, and optionally receive follow-up 
+notices or result summaries. This makes it easier for patients to stay engaged in 
+their own care, giving them more visibility and control over their health information. 
+Doctors have access to key medical functions such as adding and updating 
+patient records, reviewing appointments, and updating patient profiles with the 
+latest medical findings. They can also check risk assessments and view generated 
+reports, allowing them to provide timely and accurate care without relying on
+
+
+manual paperwork. Clinic staff (such as receptionists or admin personnel) manage 
+the overall flow of patient information. They handle tasks like adding new patient 
+details, booking appointments through the smart scheduling system, confirming 
+availability, managing user accounts, and monitoring system activity. They also 
+access risk prediction dashboards, generate reports, and back up data, ensuring 
+clinic operations run smoothly and securely. The system itself integrates all these 
+activities through key modules: patient information management, smart 
+scheduling, and risk prediction dashboards.
+      These modules allow the system to generate risk scores, flag high-risk 
+patients, and present information through clear reports and dashboards. Some 
+functions, like generating reports, are accessible to multiple user roles to ensure 
+teamwork and information sharing. Overall, this diagram highlights how 
+HealthBase brings together patients, doctors, and clinic staff in an organized and 
+secure system, improving care delivery, simplifying processes, and supporting 
+better clinic management.
+Research Locale
+
+      This study has been conducted at Dr. Leelin Medical Clinic, a private 
+outpatient clinic located in Makati City, Metro Manila, Philippines. The clinic serves 
+a diverse range of patients, offering specialized services in Gastroenterology, 
+Dermatology, and Orthopedics. With a dedicated but small team of doctors and 
+administrative staff, the clinic provides daily consultations, diagnostic procedures, 
+and follow-up care to both new and returning patients.
+
+
+      Dr. Leelin Medical Clinic has been identified as an ideal setting for 
+implementing the HealthBase system due to its growing need for more efficient 
+patient data management, smart scheduling, and proactive patient monitoring. 
+While the clinic has already adopted certain digital tools, such as SIRIUSMD, there 
+are still gaps in areas like predictive analytics for return visit risks and streamlined 
+scheduling. These conditions make the clinic a suitable research site for testing 
+the effectiveness of HealthBase as a tailored system designed to improve 
+outpatient workflows, enhance the quality of care, and support clinic operations 
+through well-organized data management and insightful reporting tools.
+
+
+Sources of Data
+
+      The primary sources of data for this study will be gathered from the doctors, 
+clinic staff, and administrative personnel of Dr. Leelin Medical Clinic. This includes 
+the Gastroenterologist, Dermatologist-Orthopedic specialist, receptionists, and 
+clinic assistants who are directly involved in patient care, appointment 
+management, and record-keeping. Data will be collected through surveys, 
+interviews, and observations to better understand the clinic's current workflows, 
+challenges in managing patient information, and user needs for an enhanced 
+clinical information system.
+      Secondary data will come from existing clinic records, such as non- 
+confidential patient profiles, appointment logs, consultation notes, and 
+administrative reports. These documents will provide additional context on how the
+
+
+clinic currently records, processes, and stores information, helping to inform the 
+design and development of the proposed HealthBase system.
+
+
+Data Collection
+
+      Interview. The researchers will conduct interviews with key personnel at 
+Dr. Leelin Medical Clinic, including doctors, administrative staff, and receptionists, 
+to gather insights on the current clinic workflow, challenges in patient data 
+management, and their expectations for system improvements. These semi- 
+structured interviews will help identify problem areas in processes such as patient 
+registration, medical record handling, appointment scheduling, and follow-up 
+tracking, guiding the design of the HealthBase system.
+      Observation. The researchers will also observe the clinic's day-to-day 
+operations, focusing on how staff handle patient intake, update medical records, 
+manage appointments, and coordinate follow-up care. By directly observing these 
+processes, the researchers can pinpoint workflow inefficiencies, repetitive tasks, 
+or delays that can be addressed through system automation and better information 
+management.
+      Survey Questionnaire. To gather user feedback and perspectives, the 
+researchers will prepare and distribute survey questionnaires to clinic staff and 
+doctors. These surveys will collect information about their experiences with current 
+procedures, their expectations for the new system, and their evaluation of 
+HealthBase in terms of usability, functionality, and efficiency, particularly during 
+the system's pilot testing phase.
+
+
+      System Performance Logs. The researchers will collect system 
+performance data by tracking metrics from both the current processes and the 
+implemented HealthBase system. This includes measuring processing times, error 
+rates, system responsiveness, and reliability. This quantitative data will allow the 
+researchers to compare the clinic's operations before and after HealthBase 
+implementation, providing clear evidence of improvements or areas needing 
+adjustment.
+      Instruments. This study will use four main research instruments to collect 
+well-rounded data for the development and evaluation of the HealthBase system. 
+A semi-structured interview guide will gather qualitative insights from clinic 
+personnel about workflow challenges, needs, and expectations for digital 
+improvements. An observation checklist will help document how patient 
+registration, record updates, appointment scheduling, and follow-ups are currently 
+handled in the clinic. Pre- and post-implementation survey questionnaires will be 
+used to assess users' knowledge, expectations, and satisfaction with the system, 
+using a modified 4-point Likert scale (1: Strongly Disagree; 2: Disagree; 3: Agree; 
+4: Strongly Agree).
+      Additionally, a custom system performance monitoring tool will track 
+quantitative metrics such as processing times, error rates, and system reliability 
+before and after implementation. These combined instruments will support 
+statistical analyses, such as frequency and percentage distributions for 
+demographic and process-related data, arithmetic means for assessing system 
+improvements, and usability scores from the modified survey tool to evaluate the
+
+
+overall impact of HealthBase. Together, these instruments will ensure a thorough 
+evaluation covering technical, operational, and user experience aspects 
+throughout the system's development and deployment.
+
+
+References
+
+
+[1]	S. J. Patel et al., "The evolution of health information systems: A review,"
+
+Health Informatics Journal, vol. 25, no. 3, pp. 555-569, 2019.
+
+[2]	S. Dash, S. K. Shakyawar, M. Sharma, and S. Kaushik, "Big data in 
+healthcare: Management, analysis and future prospects," Journal of Big 
+Data, vol. 6, p. 54, 2019. [Online]. Available: 
+https://doi.org/10.1186/s40537-019-0217-0
+[3]	E. Rojas, J. Munoz-Gama, M. Sepúlveda, and D. Capurro, "Process mining 
+in healthcare: A literature review," Journal of Biomedical Informatics, vol. 
+61,	pp.	224-236,	2016.	[Online].	Available: 
+https://doi.org/10.1016/j.jbi.2016.04.007
+[4]	H. Goldstein et al., "The implementation of healthcare IT in resource-limited 
+settings," Healthcare Technology Letters, vol. 4, no. 4, pp. 109-114, 2017.
+[5]	E. J. Campbell et al., "Clinical decision support systems for medication 
+safety: A systematic review," BMJ Quality & Safety, vol. 28, no. 7, pp. 561- 
+570, 2019.
+[6]	R. Aronson, "Medication errors: What they are, how they happen, and how 
+to avoid them," QJM: An International Journal of Medicine, vol. 102, no. 8,
+pp. 513-521, 2009.
+
+[7]	H. Chen et al., "Database management in healthcare: Design and 
+implementation," Journal of Medical Systems, vol. 38, 2014.
+[8]	Y. Zhang et al., "Big data analytics in healthcare: Promise and potential,"
+
+Health Information Science and Systems, vol. 6, no. 1, 2018.
+
+
+[9]	T. Benson and G. Grieve, Principles of Health Interoperability: SNOMED 
+CT, HL7 and FHIR, 3rd ed., Springer, 2016.
+[10]	J. Mandl and I. S. Kohane, "Time for a patient-driven health 
+information economy?" New England Journal of Medicine, vol. 374, pp. 
+205-208, 2016.
+[11]	J. Futoma et al., "An improved multi-output Gaussian process RNN 
+with real-time validation for early sepsis detection," in Machine Learning for 
+Healthcare Conference, 2017.
+[12]	Rajkomar et al., "Scalable and accurate deep learning for electronic 
+health records," npj Digital Medicine, vol. 1, no. 1, 2018.
+[13]	L. Holmgren et al., "Hospital readmission risk prediction using EHR 
+data: A systematic review," Journal of the American Medical Informatics 
+Association, vol. 27, no. 5, pp. 782-795, 2020.
+[14]	K. Ndlovu, M. Mars, and R. E. Scott, "Interoperability frameworks 
+linking mHealth applications to electronic record systems," BMC Health 
+Services Research, vol. 21, p. 459, 2021. [Online]. Available: 
+https://doi.org/10.1186/s12913-021-06473-6
+[15]	M. Wornow, Y. Xu, R. Thapa et al., "The shaky foundations of large 
+language models and foundation models for electronic health records," npj 
+Digital Medicine, vol. 6, p. 135, 2023. [Online]. Available: 
+https://doi.org/10.1038/s41746-023-00879-8
+[16]	M. Tayefi et al., "Challenges and opportunities beyond structured 
+data in analysis of electronic health records," WIREs Computational
+
+
+Statistics,	vol.	13,	2021.	[Online].	Available: 
+https://doi.org/10.1002/wics.1549
+[17]	Tapuria et al., "Impact of patient access to their electronic health 
+record: Systematic review," Informatics for Health and Social Care, vol. 46, 
+no. 2, pp. 192-204, 2021. [Online]. Available: 
+https://doi.org/10.1080/17538157.2021.1879810
+[18]	L. Cook et al., "Issues with variability in electronic health record data 
+about race and ethnicity," JMIR Medical Informatics, vol. 10, no. 9, e39235, 
+2022. [Online]. Available: https://doi.org/10.2196/39235
+[19]	M. J. Sembay et al., "Provenance data management in health 
+information systems: A systematic literature review," Journal of 
+Personalized Medicine, vol. 13, no. 6, p. 991, 2023. [Online]. Available: 
+https://doi.org/10.3390/jpm13060991
+[20]	E. Mbunge et al., "Sensors and healthcare 5.0: Transformative shift 
+in virtual care through emerging digital health technologies," Global Health 
+Journal, vol. 5, no. 4, pp. 169-177, 2021. [Online]. Available: 
+https://doi.org/10.1016/j.glohj.2021.11.008
+[21]	G. Bologa et al., "High performance implementation of the 
+hierarchical likelihood for generalized linear mixed models," BMC Medical 
+Research Methodology, vol. 21, p. 151, 2021. [Online]. Available: 
+https://doi.org/10.1186/s12874-021-01318-6
+[22]	J. E. Linder et al., "The role of electronic health records in advancing 
+genomic medicine," Annual Review of Genomics and Human Genetics, vol.
+
+
+22, pp. 1-23, 2021. [Online]. Available: https://doi.org/10.1146/annurev-
+
+genom-121120-125204
+
+[23]	J. S. Marwaha et al., "Deploying digital health tools within large, 
+complex health systems: Key considerations for adoption and 
+implementation," npj Digital Medicine, vol. 5, Art. no. 13, 2022. [Online]. 
+Available: https://doi.org/10.1038/s41746-022-00557-1
+[24]	O. Ozonze, P. J. Scott, and A. A. Hopgood, "Automating electronic 
+health record data quality assessment," Journal of Medical Systems, vol. 
+47, p. 23, 2023. [Online]. Available: https://doi.org/10.1007/s10916-022-
+01892-2
+
+[25]	G. Patra et al., "Extracting social determinants of health from 
+electronic health records using natural language processing: A systematic 
+review," Journal of the American Medical Informatics Association, vol. 28, 
+no. 12, pp. 2716-2727, 2021. [Online]. Available: 
+https://doi.org/10.1093/jamia/ocab170
+[26]	S. Whitelaw et al., "Barriers and facilitators of the uptake of digital 
+health technology in cardiovascular care: A systematic scoping review," 
+European Heart Journal - Digital Health, vol. 2, no. 1, pp. 62-74, 2021. 
+[Online]. Available: https://doi.org/10.1093/ehjdh/ztab005
+[27]	Li et al., "The impact of electronic health record interoperability on 
+safety and quality of care in high-income countries: Systematic review," 
+Journal of Medical Internet Research, vol. 24, no. 9, e38144, 2022. [Online]. 
+Available: https://doi.org/10.2196/38144
+
+
+[28]	S. Syed et al., "Predictive value of indicators for identifying child 
+maltreatment and intimate partner violence in coded electronic health 
+records," Archives of Disease in Childhood, vol. 106, no. 1, pp. 44-53, 2021. 
+[Online]. Available: https://doi.org/10.1136/archdischild-2020-319027
+[29]	R. Y. H. De Mesa et al., "Facing the digital frontier: Exploring user 
+acceptance of electronic health records in the Philippines," BMJ Open 
+Quality, vol. 13, no. 2, e002621, 2024. [Online]. Available: 
+https://doi.org/10.1136/bmjoq-2023-002621
+[30]	Manteghinejad and S. H. Javanmard, "Challenges and opportunities 
+of digital health in a post-COVID-19 world," Journal of Research in Medical 
+Sciences, vol. 26, p. 11, 2021. [Online]. Available: 
+https://doi.org/10.4103/jrms.JRMS_1255_20
+[31]	P. J. Acacio-Claro et al., "Understanding adoption of electronic 
+medical records (EMRs) during a health emergency," Acta Medica 
+Philippina, vol. 58, no. 22, 2024. [Online]. Available: 
+https://doi.org/10.47895/amp.vi0.8911
+[32]	S. Kumar et al., "Blockchain in healthcare: Investigating the 
+applications of blockchain technology in securing electronic health records," 
+Cuestiones de Fisioterapia, vol. 53, no. 3, pp. 429-456, 2024. [Online]. 
+Available: https://doi.org/10.48047/ye0wf646
+[33]	C. D. Padilla et al., "Integrating genetic services in the Philippine 
+public health delivery system: The value of networks," Genes, vol. 15, no. 
+6, p. 780, 2024. [Online]. Available: https://doi.org/10.3390/genes15060780
+
+
+[34]	V. de Claro and A. de Claro, "Holes in the armor: Addressing the 
+gaps in healthcare cybersecurity in the Philippines and beyond," Mayo 
+Clinic Proceedings: Digital Health, vol. 2, no. 1, pp. 32-33, 2024. [Online]. 
+Available: https://doi.org/10.1016/j.mcpdig.2023.11.007
+[35]	M. I. M. Salleh, R. Abdullah, and N. Zakaria, "Evaluating the effects 
+of electronic health records system adoption on the performance of 
+Malaysian healthcare providers," BMC Medical Informatics and Decision 
+Making, vol. 21, Art. no. 75, 2021. [Online]. Available: 
+https://doi.org/10.1186/s12911-021-01447-4
+[36]	A. Epizitone, S. P. Moyane, and I. E. Agbehadji, "A systematic 
+literature review of health information systems for healthcare," Healthcare, 
+vol. 11, no. 7, p. 959, 2023. [Online]. Available: 
+https://doi.org/10.3390/healthcare11070959
+[37]	M. Shaikh, A. H. M. Vayani, S. Akram, and N. Qamar, "Open-source 
+electronic health record systems: A systematic review of most recent 
+advances," Health Informatics Journal, vol. 28, no. 2, 2022. [Online]. 
+Available: https://doi.org/10.1177/14604582221099828
+[38]	H. Finnegan and N. Mountford, "25 years of electronic health record 
+implementation processes: Scoping review," Journal of Medical Internet 
+Research, vol. 27, e60077, 2025. [Online]. Available: 
+https://doi.org/10.2196/60077
+[39]	E. Psarra, D. Apostolou, Y. Verginadis et al., "Permissioned 
+blockchain network for proactive access control to electronic health
+
+
+records," BMC Medical Informatics and Decision Making, vol. 24, p. 303, 
+2024. [Online]. Available: https://doi.org/10.1186/s12911-024-02708-8
+[40]	A. Mantri, V. Makutam, S. M. A. M. Javid et al., "An overview on 
+clinical data management and role of Pharm.D in clinical data 
+management," World Journal of Pharmaceutical and Medical Research, vol. 
+10, no. 8, pp. 299-303, 2023. [Online]. Available: 
+https://www.researchgate.net/publication/383665730
+[41]	N. R. B. Rosales, "Nurses' satisfaction with adopting a homegrown 
+public tertiary hospital electronic medical record during the pandemic," Acta 
+Medica Philippina, Advance online publication, 2024. [Online]. Available: 
+https://doi.org/10.47895/amp.vi0.10687
+[42]	F. Xie, H. Yuan, Y. Ning et al., "Deep learning for temporal data 
+representation in electronic health records: A systematic review of 
+challenges and methodologies," Journal of Biomedical Informatics, vol. 126,
+p.	103980,	2022.	[Online].	Available: 
+https://doi.org/10.1016/j.jbi.2021.103980
+[43]	F. Wurster, C. Herrmann, M. Beckmann et al., "Differences in 
+changes of data completeness after the implementation of an electronic 
+medical record in three surgical departments of a German hospital," BMC 
+Medical Informatics and Decision Making, vol. 24, p. 258, 2024. [Online]. 
+Available: https://doi.org/10.1186/s12911-024-02667-0
+[44]	N. N. Basil, S. Ambe, C. Ekhator, and E. Fonkem, "Health records 
+database and inherent security concerns: A review of the literature,"
+
+
+Cureus,	vol.	14,	no.	10,	e30168,	2022.	[Online].	Available: 
+https://doi.org/10.7759/cureus.30168
+[45]	C. Yuvarajan, S. N. Priya, and A. Bhoomadevi, "Designing a mobile 
+health platform for effective medical records management in hospitals," 
+Scientific Set Journal of Pediatrics, vol. 2, no. 4, pp. 1-11, 2024. [Online]. 
+Available: https://doi.org/10.1007/s42452-025-06777-w
+[46]	Y. K. C. Aban, J. V. Abunto, J. V. E. P. Aliorde et al., "The rise of 
+telemedicine in the Philippines during COVID-19: A systematic review of 
+utilization trends and patient outcomes," Philippine Social Science Journal, 
+vol. 6, no. 4, pp. 9-18, 2024. [Online]. Available: 
+https://doi.org/10.52006/main.v6i4.876
+[47]	R. M. Samaniego, "Mental health legislation in the Philippines: Its 
+beginnings, highlights, and updates," Taiwanese Journal of Psychiatry, vol. 
+36, no. 2, pp. 51-58, 2022. [Online]. Available: 
+https://doi.org/10.1016/j.dsx.2024.102951
+[48]	P. N. Ngugi, M. C. Were, and A. Babic, "Users' perception on factors 
+contributing to electronic medical records systems use: A focus group 
+discussion study in healthcare facilities setting in Kenya," BMC Medical 
+Informatics and Decision Making, vol. 21, Art. no. 362, 2021. [Online]. 
+Available: https://doi.org/10.1186/s12911-021-01737-x
+[49]	S. Antonio, M. Dancel, M. C. Estioco, M. V. Abante, and F. Vigonte, 
+"The impact of government economic policies in shaping hospital response
+
+
+to public health crisis in the Philippines," SSRN, 2025. [Online]. Available: 
+https://doi.org/10.2139/ssrn.5140387
+[50]	R. Naamneh and M. Bodas, "The effect of electronic medical records 
+on medication errors, workload, and medical information availability among 
+qualified nurses in Israel-a cross-sectional study," BMC Nursing, vol. 23, 
+Art. no. 270, 2024. [Online]. Available: https://doi.org/10.1186/s12912-024-
+01936-7
+
+[51]	L. F. T. Cando et al., "Current status of diabetes mellitus care and 
+management in the Philippines," Diabetes & Metabolic Syndrome: Clinical 
+Research & Reviews, vol. 18, no. 4, p. 103005, 2024. [Online]. Available: 
+https://doi.org/10.1016/j.dsx.2024.102951
+[52]	J. E. Gerwer, G. Bacani, P. S. Juang, and K. Kulasa, "Electronic 
+health record-based decision-making support in inpatient diabetes 
+management," Current Diabetes Reports, vol. 22, no. 9, pp. 433-440, 2022. 
+[Online]. Available: https://doi.org/10.1007/s11892-022-01481-0
+[53]	G. O. Anuran et al., "Telemedicine services in the University of the 
+Philippines Health Service during the COVID-19 pandemic," Acta Medica 
+Philippina, vol. 55, no. 2, 2021. [Online]. Available: 
+https://doi.org/10.47895/amp.v55i2.2806
+[54]	T. J. Avelino-Silva and O. Jaluul, "Malnutrition in hospitalized old 
+patients: Screening and diagnosis, clinical outcomes, and management," 
+Nutrients, vol. 14, no. 4, p. 910, 2022. [Online]. Available: 
+https://doi.org/10.3390/nu14040910
+
+
+[55]	J. Moy et al., "Measurement of clinical documentation burden among 
+physicians and nurses using electronic health records: A scoping review," 
+Journal of the American Medical Informatics Association, vol. 28, no. 5, pp. 
+998-1008, 2021. [Online]. Available: https://doi.org/10.1093/jamia/ocaa325
+[56]	R. Alibudbud, "Navigating the Philippine mental health system for the 
+nation's youth: Challenges and opportunities," BJPsych International, vol. 
+21, no. 3, pp. 56-58, 2024. [Online]. Available: 
+https://doi.org/10.1192/bji.2024.5
+[57]	D. Harries et al., "Primary Health Care System Strengthening Project 
+in Sri Lanka: Status and Challenges with Human Resources, Information 
+Systems, Drugs and Laboratory Services," Healthcare, vol. 10, no. 11, p. 
+2251,		2022.	[Online].	Available: 
+https://doi.org/10.3390/healthcare10112251
+[58]	T. Henriksen et al., "Medication management for patients with hip 
+fracture at a regional hospital and associated primary care units in Norway," 
+BMJ Open, vol. 12, no. 11, e064868, 2022. [Online]. Available: 
+https://doi.org/10.1136/bmjopen-2022-064868
+[59]	G. G. Dumancas et al., "Barriers and recommendations for 
+establishing a COVID-19 patient registry in a regional setting in the
+[60]	S. J. Patel et al., "The evolution of health information systems: A 
+review," Health Informatics Journal, vol. 25, no. 3, pp. 555-569, 2019.
+[61]	S. Dash, S. K. Shakyawar, M. Sharma, and S. Kaushik, "Big data in 
+healthcare: Management, analysis and future prospects," Journal of Big
+
+
+Data,	vol.	6,	p.	54,	2019.	[Online].	Available: 
+https://doi.org/10.1186/s40537-019-0217-0
+[62]	E. Rojas, J. Munoz-Gama, M. Sepúlveda, and D. Capurro, "Process 
+mining in healthcare: A literature review," Journal of Biomedical Informatics, 
+vol. 61, pp. 224-236, 2016. [Online]. Available: 
+https://doi.org/10.1016/j.jbi.2016.04.007
+[63]	H. Goldstein et al., "The implementation of healthcare IT in resource- 
+limited settings," Healthcare Technology Letters, vol. 4, no. 4, pp. 109-114, 
+2017.
+[64]	E. J. Campbell et al., "Clinical decision support systems for 
+medication safety: A systematic review," BMJ Quality & Safety, vol. 28, no. 
+7, pp. 561-570, 2019.
+[65]	R. Aronson, "Medication errors: What they are, how they happen, 
+and how to avoid them," QJM: An International Journal of Medicine, vol. 
+102, no. 8, pp. 513-521, 2009.
+[66]	H. Chen et al., "Database management in healthcare: Design and 
+implementation," Journal of Medical Systems, vol. 38, 2014.
+[67]	Y. Zhang et al., "Big data analytics in healthcare: Promise and 
+potential," Health Information Science and Systems, vol. 6, no. 1, 2018.
+[68]	T. Benson and G. Grieve, Principles of Health Interoperability: 
+SNOMED CT, HL7 and FHIR, 3rd ed., Springer, 2016.
+
+
+[69]	J. Mandl and I. S. Kohane, "Time for a patient-driven health 
+information economy?" New England Journal of Medicine, vol. 374, pp. 
+205-208, 2016.
+[70]	J. Futoma et al., "An improved multi-output Gaussian process RNN 
+with real-time validation for early sepsis detection," in Machine Learning for 
+Healthcare Conference, 2017.
+[71]	Rajkomar et al., "Scalable and accurate deep learning for electronic 
+health records," npj Digital Medicine, vol. 1, no. 1, 2018.
+[72]	L. Holmgren et al., "Hospital readmission risk prediction using EHR 
+data: A systematic review," Journal of the American Medical Informatics 
+Association, vol. 27, no. 5, pp. 782-795, 2020.
+[73]	K. Ndlovu, M. Mars, and R. E. Scott, "Interoperability frameworks 
+linking mHealth applications to electronic record systems," BMC Health 
+Services Research, vol. 21, p. 459, 2021. [Online]. Available: 
+https://doi.org/10.1186/s12913-021-06473-6
+[74]	M. Tayefi et al., "Challenges and opportunities beyond structured 
+data in analysis of electronic health records," WIREs Computational 
+Statistics,	vol.	13,	2021.	[Online].	Available: 
+https://doi.org/10.1002/wics.1549
+[75]	Tapuria et al., "Impact of patient access to their electronic health 
+record: Systematic review," Informatics for Health and Social Care, vol. 46, 
+no. 2, pp. 192-204, 2021. [Online]. Available: 
+https://doi.org/10.1080/17538157.2021.1879810
+
+
+[76]	J. S. Marwaha et al., "Deploying digital health tools within large, 
+complex health systems: Key considerations for adoption and 
+implementation," npj Digital Medicine, vol. 5, Art. no. 13, 2022. [Online]. 
+Available: https://doi.org/10.1038/s41746-022-00557-1
+[77]	O. Ozonze, P. J. Scott, and A. A. Hopgood, "Automating electronic 
+health record data quality assessment," Journal of Medical Systems, vol. 
+47, p. 23, 2023. [Online]. Available: https://doi.org/10.1007/s10916-022-
+01892-2
+
+[78]	Li et al., "The impact of electronic health record interoperability on 
+safety and quality of care in high-income countries: Systematic review," 
+Journal of Medical Internet Research, vol. 24, no. 9, e38144, 2022. [Online]. 
+Available: https://doi.org/10.2196/38144
+[79]	R. Y. H. De Mesa et al., "Facing the digital frontier: Exploring user 
+acceptance of electronic health records in the Philippines," BMJ Open 
+Quality, vol. 13, no. 2, e002621, 2024. [Online]. Available: 
+https://doi.org/10.1136/bmjoq-2023-002621
+[80]	Manteghinejad and S. H. Javanmard, "Challenges and opportunities 
+of digital health in a post-COVID-19 world," Journal of Research in Medical 
+Sciences, vol. 26, p. 11, 2021. [Online]. Available: 
+https://doi.org/10.4103/jrms.JRMS_1255_20
+[81]	P. J. Acacio-Claro et al., "Understanding adoption of electronic 
+medical records (EMRs) during a health emergency," Acta Medica
+
+
+Philippina,	vol.	58,	no.	22,	2024.	[Online].	Available: 
+https://doi.org/10.47895/amp.vi0.8911
+[82]	V. de Claro and A. de Claro, "Holes in the armor: Addressing the 
+gaps in healthcare cybersecurity in the Philippines and beyond," Mayo 
+Clinic Proceedings: Digital Health, vol. 2, no. 1, pp. 32-33, 2024. [Online]. 
+Available: https://doi.org/10.1016/j.mcpdig.2023.11.007
+[83]	M. I. M. Salleh, R. Abdullah, and N. Zakaria, "Evaluating the effects 
+of electronic health records system adoption on the performance of 
+Malaysian healthcare providers," BMC Medical Informatics and Decision 
+Making, vol. 21, Art. no. 75, 2021. [Online]. Available: 
+https://doi.org/10.1186/s12911-021-01447-4
+[84]	A. Epizitone, S. P. Moyane, and I. E. Agbehadji, "A systematic 
+literature review of health information systems for healthcare," Healthcare, 
+vol. 11, no. 7, p. 959, 2023. [Online]. Available: 
+https://doi.org/10.3390/healthcare11070959
+[85]	M. Shaikh, A. H. M. Vayani, S. Akram, and N. Qamar, "Open-source 
+electronic health record systems: A systematic review of most recent 
+advances," Health Informatics Journal, vol. 28, no. 2, 2022. [Online]. 
+Available: https://doi.org/10.1177/14604582221099828
+[86]	H. Finnegan and N. Mountford, "25 years of electronic health record 
+implementation processes: Scoping review," Journal of Medical Internet 
+Research, vol. 27, e60077, 2025. [Online]. Available: 
+https://doi.org/10.2196/60077
+
+
+[87]	N. R. B. Rosales, "Nurses' satisfaction with adopting a homegrown 
+public tertiary hospital electronic medical record during the pandemic," Acta 
+Medica Philippina, Advance online publication, 2024. [Online]. Available: 
+https://doi.org/10.47895/amp.vi0.10687
+[88]	F. Wurster, C. Herrmann, M. Beckmann et al., "Differences in 
+changes of data completeness after the implementation of an electronic 
+medical record in three surgical departments of a German hospital," BMC 
+Medical Informatics and Decision Making, vol. 24, p. 258, 2024. [Online]. 
+Available: https://doi.org/10.1186/s12911-024-02667-0
+[89]	N. N. Basil, S. Ambe, C. Ekhator, and E. Fonkem, "Health records 
+database and inherent security concerns: A review of the literature," 
+Cureus, vol. 14, no. 10, e30168, 2022. [Online]. Available: 
+https://doi.org/10.7759/cureus.30168
+[90]	C. Yuvarajan, S. N. Priya, and A. Bhoomadevi, "Designing a mobile 
+health platform for effective medical records management in hospitals," 
+Scientific Set Journal of Pediatrics, vol. 2, no. 4, pp. 1-11, 2024. [Online]. 
+Available: https://doi.org/10.1007/s42452-025-06777-w
+[91]	Y. K. C. Aban, J. V. Abunto, J. V. E. P. Aliorde et al., "The rise of 
+telemedicine in the Philippines during COVID-19: A systematic review of 
+utilization trends and patient outcomes," Philippine Social Science Journal, 
+vol. 6, no. 4, pp. 9-18, 2024. [Online]. Available: 
+https://doi.org/10.52006/main.v6i4.876
+
+
+[92]	P. N. Ngugi, M. C. Were, and A. Babic, "Users' perception on factors 
+contributing to electronic medical records systems use: A focus group 
+discussion study in healthcare facilities setting in Kenya," BMC Medical 
+Informatics and Decision Making, vol. 21, Art. no. 362, 2021. [Online]. 
+Available: https://doi.org/10.1186/s12911-021-01737-x
+[93]	R. Naamneh and M. Bodas, "The effect of electronic medical records 
+on medication errors, workload, and medical information availability among 
+qualified nurses in Israel-a cross-sectional study," BMC Nursing, vol. 23, 
+Art. no. 270, 2024. [Online]. Available: https://doi.org/10.1186/s12912-024-
+01936-7
+
+[94]	G. O. Anuran et al., "Telemedicine services in the University of the 
+Philippines Health Service during the COVID-19 pandemic," Acta Medica 
+Philippina, vol. 55, no. 2, 2021. [Online]. Available: 
+https://doi.org/10.47895/amp.v55i2.2806
+[95]	J. Moy et al., "Measurement of clinical documentation burden among 
+physicians and nurses using electronic health records: A scoping review," 
+Journal of the American Medical Informatics Association, vol. 28, no. 5, pp. 
+998-1008, 2021. [Online]. Available: https://doi.org/10.1093/jamia/ocaa325
+[96]	C. Li, C. Parpia, and A. Sriharan, "Burnout related to electronic health 
+record use in primary care," Journal of Primary Care & Community Health, 
+vol. 14, 21501319231166921, 2023. [Online]. Available: 
+https://doi.org/10.1177/21501319231166921
+
+
+[97]	Windari, K. Kismartini, Y. Luqman, and B. Wijanarko, "Organizational 
+effect on the implementation of "SIMRS" in hospitals: A systematic review," 
+Journal of Health Policy and Management, vol. 8, no. 1, pp. 13-22, 2023. 
+[Online]. Available: https://doi.org/10.26911/thejhpm.2023.08.01.02
+[98]	I. Köse et al., "Basic electronic health record (EHR) adoption in 
+Türkiye is nearly complete but challenges persist," BMC Health Services 
+Research, vol. 23, p. 987, 2023. [Online]. Available: 
+https://doi.org/10.1186/s12913-023-09859-w
+[99]	M. K. Hossain et al., "Electronic medical record implementation and 
+recordkeeping culture," BMC Health Services Research, vol. 25, p. 249, 
+2025. [Online]. Available: https://doi.org/10.1186/s12913-025-12399-0
+[100]	E. Antor, J. Owusu-Marfo, and J. Kissi, "Usability evaluation of 
+electronic health records," BMC Medical Informatics and Decision Making, 
+vol. 24, p. 231, 2024. [Online]. Available: https://doi.org/10.1186/s12911-
+024-02636-7
+
+[101]	J. E. M. Cortez et al., "Health information system users in public 
+health facilities," International Journal of Multidisciplinary: Applied Business 
+and Education Research, vol. 4, no. 1, pp. 156-173, 2023. [Online].
+Available: https://doi.org/10.11594/ijmaber.04.01.15
+
+[102]	K. C. Derecho et al., "Technology adoption of electronic medical 
+records in developing economies," Digital Health, vol. 9, Article 
+20552076231224605,	2024.	[Online].	Available: 
+https://doi.org/10.1177/20552076231224605
+
+
+[103]	Torab-Miandoab et al., "Interoperability of heterogeneous health 
+information systems," BMC Medical Informatics and Decision Making, vol. 
+23, p. 18, 2023. [Online]. Available: https://doi.org/10.1186/s12911-023-
+02115-5
+
+[104]	Kang and I. N. Sarkar, "Interventions to reduce electronic health 
+record-related burnout: A systematic review," Applied Clinical Informatics, 
+vol. 15, no. 1, pp. 10-25, 2024. [Online]. Available: 
+https://doi.org/10.1055/a-2203-3787
+[105]	H. Maarsingh et al., "Implementing electronic health records on a 
+medical service trip improves the patient care process," Frontiers in Health 
+Services, vol. 2, p. 960427, 2022. [Online]. Available: 
+https://doi.org/10.3389/frhs.2022.960427
+[106]	E. Lewis et al., "Electronic health record data quality assessment and 
+tools: A systematic review," Journal of the American Medical Informatics 
+Association, vol. 30, no. 10, pp. 1730-1740, 2023. [Online]. Available: 
+https://doi.org/10.1093/jamia/ocad120
+[107]	L. S. Rotenstein, N. Hendrix, R. L. Phillips, J. Adler-Milstein, and R. 
+Willard-Grace, "Team and electronic health record features and burnout 
+among family physicians," JAMA Network Open, vol. 7, no. 11, e2442687, 
+2024.		[Online].	Available: 
+https://doi.org/10.1001/jamanetworkopen.2024.42687
+[108]	H. Tsai et al., "Effects of electronic health record implementation and 
+barriers to adoption and use: A scoping review and qualitative analysis,"
+
+
+Life, vol. 10, no. 12, p. 327, 2020. [Online]. Available: 
+https://doi.org/10.3390/life10120327
+[109]	M. Alharthi, F. Alotaibi, A. Alzahrani, and S. Alghamdi, "An 
+examination of large-scale electronic health records implementation in 
+primary healthcare centers in Saudi Arabia," Frontiers in Public Health, vol. 
+11,		p.	1121327,	2023.	[Online].	Available: 
+https://doi.org/10.3389/fpubh.2023.1121327
+[110]	D. Helminski et al., "Dashboards in health care settings: Protocol for 
+a scoping review," JMIR Research Protocols, vol. 11, no. 3, e34894, 2022. 
+[Online]. Available: https://doi.org/10.2196/34894
+[111]	D. F. Sittig, P. Lakhani, and H. Singh, "Applying requisite imagination 
+to safeguard electronic health record transitions," Journal of the American 
+Medical Informatics Association, vol. 29, no. 5, pp. 1014-1018, 2022. 
+[Online]. Available: https://doi.org/10.1093/jamia/ocab291
+[112]	Y. Shen, J. Yu, J. Zhou, and G. Hu, "Twenty-five years of evolution 
+and hurdles in electronic health records and interoperability in medical 
+research: Comprehensive review," Journal of Medical Internet Research, 
+vol. 27, e59024, 2025. [Online]. Available: https://doi.org/10.2196/59024
+[113]	H. S. F. Fraser, M. Mugisha, I. Bacher, J. L. Ngenzi, C. Seebregts,
+
+A. Umubyeyi, and J. Condo, "Factors influencing data quality in electronic 
+health record systems in 50 health facilities in Rwanda and the role of 
+clinical alerts: Cross-sectional observational study," JMIR Public Health and
+
+
+Surveillance,	vol.	10,	e49127,	2024.	[Online].	Available: 
+https://doi.org/10.2196/49127
+
+
+
+
+
